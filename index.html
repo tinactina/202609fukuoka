@@ -2,760 +2,1285 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LEO & TINA IN FUKUOKA ♡ 福岡旅手帳</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+TC:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
-    <title>2026九月 九州福岡冒險記 ♡ Leo & Tina 5 Days</title>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-page: #FAF7F2;
-            --card-bg: #FFFFFF;
-            --primary: #4A6B56;
-            --primary-light: #EBF3ED;
-            --coral: #E07A5F;
-            --coral-light: #FDF2E9;
-            --rose: #E78895;
-            --rose-light: #FDF0F2;
-            --mustard: #EAA844;
-            --mustard-light: #FEF8EC;
-            --text-main: #3D405B;
-            --text-sub: #6C757D;
-            --border-soft: #EFE9E0;
-            --radius-box: 20px;
-            --shadow-card: 0 8px 24px rgba(180, 160, 140, 0.12);
+            --sky-bg: #DCECF7;
+            --sky-gradient: linear-gradient(180deg, #D6EBF8 0%, #EBF4FA 40%, #F5F9FD 100%);
+            --card-white: #FFFFFF;
+            --primary-navy: #2A3B4C;
+            --text-sub: #5C6B7A;
+            --border-line: #3D5064;
+            --fuji-blue: #6BA4D9;
+            --fuji-light: #A5C9EC;
+            --pastel-coral: #F68B78;
+            --pastel-pink: #F8B4B8;
+            --pastel-yellow: #FDE282;
+            --pastel-green: #98D7B2;
+            --soft-gray: #F2F5F8;
+            --radius-main: 28px;
+            --radius-pill: 50px;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-page);
-            color: var(--text-main);
-            line-height: 1.68;
-            padding-bottom: 70px;
+            font-family: 'Zen Maru Gothic', 'Outfit', 'Noto Sans TC', sans-serif;
+            background: var(--sky-gradient);
+            color: var(--primary-navy);
+            min-height: 100vh;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+            letter-spacing: 0.02em;
         }
-        header {
-            background: linear-gradient(135deg, #FBF4EC 0%, #F5E5D5 100%);
-            padding: 40px 20px 30px;
-            text-align: center;
-            border-bottom: 3px dashed #E5D5C5;
-        }
-        .header-sub {
-            font-size: 1rem;
-            color: var(--coral);
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-        }
-        
-        h1, h2, h3, .day-date, .day-badge, .header-sub, .nav-btn {
-            font-family: 'Zen Maru Gothic', 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', Meiryo, sans-serif;
-        }
-        header h1 {
-            font-size: 1.95rem;
-            font-weight: 800;
-            color: #3D405B;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        .header-meta {
-            display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            font-size: 0.86rem;
-            max-width: 880px;
+
+        /* Top Bar Illustration Aesthetic */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 20px 14px;
+            max-width: 580px;
             margin: 0 auto;
         }
-        .meta-tag {
-            background: #FFFFFF;
-            color: var(--text-main);
-            padding: 5px 12px;
-            border-radius: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            border: 1px solid var(--border-soft);
+
+        .site-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            color: var(--primary-navy);
+            line-height: 1.2;
+        }
+
+        .site-sub {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        .top-pills {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .date-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
             font-weight: 700;
+            background: #FFFFFF;
+            color: var(--primary-navy);
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            border: 1.5px solid var(--primary-navy);
+            box-shadow: 2px 2px 0px rgba(42, 59, 76, 0.2);
         }
-        .meta-tag.hotel {
-            background: var(--coral);
-            color: #FFFFFF;
-            border-color: var(--coral);
+
+        .menu-circle {
+            width: 36px;
+            height: 36px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            border: 1.5px solid var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 2px 2px 0px rgba(42, 59, 76, 0.2);
+            cursor: pointer;
         }
-        .container {
-            max-width: 960px;
+
+        /* Floating Cloud & Airplane Frame */
+        .app-container {
+            max-width: 540px;
             margin: 0 auto;
-            padding: 20px 14px;
+            padding: 0 16px;
         }
-        .quick-nav {
+
+        /* Hero Frame Container - Shizuoka Style */
+        .hero-frame {
+            background: #FFFFFF;
+            border-radius: var(--radius-main);
+            border: 2px solid var(--border-line);
+            box-shadow: 4px 6px 0px rgba(61, 80, 100, 0.15);
+            padding: 16px;
+            margin-bottom: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Weather & Date Capsule inside Card */
+        .weather-capsule {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FAF7F2;
+            border: 1.5px solid var(--border-line);
+            border-radius: 16px;
+            padding: 8px 16px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .capsule-label {
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .capsule-date {
+            color: var(--primary-navy);
+            font-size: 0.95rem;
+        }
+
+        .capsule-temp {
+            color: var(--pastel-coral);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .capsule-temp span {
+            color: var(--fuji-blue);
+        }
+
+        /* Hero Image Container */
+        .hero-img-box {
+            width: 100%;
+            height: 230px;
+            border-radius: 18px;
+            border: 1.5px solid var(--border-line);
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(180deg, #A2D2FF 0%, #BDE0FE 60%, #4895EF 100%);
+        }
+
+        /* Mountain & Coastal Scene SVG inside */
+        .hero-svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Speech Bubble */
+        .speech-bubble {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            background: #FFFFFF;
+            border: 1.5px solid var(--border-line);
+            border-radius: 14px;
+            padding: 6px 12px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            box-shadow: 2px 3px 0px rgba(61, 80, 100, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .speech-bubble::before {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            right: 22px;
+            border-width: 7px 7px 0 7px;
+            border-style: solid;
+            border-color: #FFFFFF transparent transparent transparent;
+        }
+
+        .hero-meta-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+            justify-content: center;
+        }
+
+        .meta-pill {
+            background: var(--soft-gray);
+            color: var(--primary-navy);
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: var(--radius-pill);
+            border: 1.2px solid var(--border-line);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .meta-pill.highlight {
+            background: #FFF3EA;
+            border-color: var(--pastel-coral);
+            color: #C85A44;
+        }
+
+        /* =================================================== */
+        /* LIVE CURRENCY CONVERTER WIDGET (台幣 / 日幣 換算小工具) */
+        /* =================================================== */
+        .converter-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-main);
+            border: 2px solid var(--border-line);
+            box-shadow: 4px 6px 0px rgba(61, 80, 100, 0.15);
+            padding: 18px 16px 16px;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .converter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .converter-title {
+            font-size: 0.95rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-navy);
+        }
+
+        .converter-title .badge-icon {
+            background: var(--pastel-yellow);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--border-line);
+            font-size: 0.85rem;
+        }
+
+        .rate-control {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            background: var(--soft-gray);
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid #D0DBE5;
+        }
+
+        .rate-control input {
+            width: 48px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            border: none;
+            background: transparent;
+            color: var(--primary-navy);
+            text-align: center;
+            font-size: 0.82rem;
+            outline: none;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .input-box {
+            background: #FAF7F2;
+            border: 1.5px solid var(--border-line);
+            border-radius: 16px;
+            padding: 10px 12px;
+            position: relative;
+        }
+
+        .input-label {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .input-box input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            outline: none;
+        }
+
+        .swap-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--fuji-light);
+            border-radius: 50%;
+            border: 1.5px solid var(--border-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            box-shadow: 1px 2px 0px rgba(61, 80, 100, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .swap-icon:active {
+            transform: scale(0.9);
+        }
+
+        /* Quick Amount Tags */
+        .quick-amounts {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-top: 12px;
+            margin-top: 10px;
+            border-top: 1px dashed #E0E8F0;
+            scrollbar-width: none;
+        }
+        .quick-amounts::-webkit-scrollbar { display: none; }
+
+        .amt-btn {
+            background: #FFFFFF;
+            border: 1.2px solid var(--border-line);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            white-space: nowrap;
+            cursor: pointer;
+            box-shadow: 1px 2px 0px rgba(61, 80, 100, 0.1);
+        }
+        .amt-btn:hover, .amt-btn:active {
+            background: var(--pastel-yellow);
+        }
+
+        /* =================================================== */
+        /* QUICK DAY NAV TABS */
+        /* =================================================== */
+        .day-nav-scroll {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding: 6px 2px 14px;
-            margin-bottom: 18px;
+            padding: 4px 2px 16px;
+            margin-bottom: 12px;
             scrollbar-width: none;
         }
-        .quick-nav::-webkit-scrollbar { display: none; }
-        .nav-btn {
+        .day-nav-scroll::-webkit-scrollbar { display: none; }
+
+        .day-nav-pill {
+            background: #FFFFFF;
+            border: 1.8px solid var(--border-line);
+            border-radius: var(--radius-pill);
+            padding: 8px 16px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--primary-navy);
             white-space: nowrap;
-            background: #FFFFFF;
-            color: var(--text-main);
-            border: 1.5px solid var(--border-soft);
-            padding: 6px 14px;
-            border-radius: 18px;
-            font-size: 0.84rem;
-            font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: all 0.2s;
+            box-shadow: 2px 3px 0px rgba(61, 80, 100, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        .nav-btn:hover {
-            background: var(--primary);
+
+        .day-nav-pill:active {
+            transform: translate(1px, 2px);
+            box-shadow: 1px 1px 0px rgba(61, 80, 100, 0.15);
+        }
+
+        .day-nav-pill.active {
+            background: var(--fuji-blue);
             color: #FFFFFF;
+            border-color: var(--border-line);
         }
-        .day-card {
-            background: var(--card-bg);
-            border-radius: var(--radius-box);
-            border: 1px solid var(--border-soft);
-            margin-bottom: 26px;
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-        }
-        .day-header {
+
+        /* =================================================== */
+        /* DAY CARDS (AIRY JAPANESE GRAPHIC STYLE) */
+        /* =================================================== */
+        .day-schedule-card {
             background: #FFFFFF;
-            padding: 16px 20px;
-            border-bottom: 2px solid var(--bg-page);
+            border-radius: var(--radius-main);
+            border: 2px solid var(--border-line);
+            box-shadow: 4px 6px 0px rgba(61, 80, 100, 0.15);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .schedule-header {
+            background: #FAF7F2;
+            padding: 16px 18px;
+            border-bottom: 2px solid var(--border-line);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
-        .day-badge {
-            background: var(--primary);
+
+        .badge-day {
+            background: var(--pastel-coral);
             color: #FFFFFF;
-            font-size: 0.9rem;
+            border: 1.5px solid var(--border-line);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            padding: 5px 12px;
-            border-radius: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
         }
-        .day-date {
-            font-size: 1.15rem;
+
+        .date-title {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-pill {
+            font-size: 0.72rem;
             font-weight: 800;
-            color: var(--text-main);
-        }
-        .day-theme {
-            font-size: 0.84rem;
-            color: var(--coral);
-            font-weight: 700;
-            background: var(--coral-light);
+            background: #FFFFFF;
+            color: #D35400;
+            border: 1.2px solid #D35400;
             padding: 3px 10px;
-            border-radius: 14px;
+            border-radius: var(--radius-pill);
         }
-        .timeline {
-            padding: 18px 20px 8px;
+
+        /* Timeline Activities */
+        .timeline-box {
+            padding: 16px 18px 8px;
         }
-        .time-block {
-            display: grid;
-            grid-template-columns: 110px 1fr;
-            gap: 14px;
-            margin-bottom: 20px;
+
+        .item-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+            position: relative;
         }
-        @media (max-width: 640px) {
-            .time-block { grid-template-columns: 1fr; gap: 6px; }
-        }
-        .time-label {
-            font-size: 0.82rem;
+
+        .time-badge {
+            width: 76px;
+            flex-shrink: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
             font-weight: 800;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 5px 8px;
+            background: #EFF6FB;
+            color: #2D6A9F;
+            border: 1.2px solid #99C4E8;
+            padding: 4px 6px;
             border-radius: 10px;
             text-align: center;
             height: fit-content;
         }
-        .time-content h3 {
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 5px;
+
+        .item-main {
+            flex: 1;
+        }
+
+        .item-main h3 {
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--primary-navy);
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 6px;
         }
-        .tag {
-            font-size: 0.7rem;
-            font-weight: 700;
+
+        .tag-pill {
+            font-size: 0.65rem;
+            font-weight: 800;
             padding: 2px 7px;
             border-radius: 6px;
+            border: 1px solid transparent;
         }
-        .tag-shop { background: var(--rose-light); color: #C2410C; }
-        .tag-food { background: var(--mustard-light); color: #B45309; }
-        .tag-spot { background: var(--primary-light); color: #2D6A4F; }
-        .tag-trans { background: #F3E8FF; color: #6B21A8; }
-        .tag-bakery { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
-        .tag-super { background: #E0F2FE; color: #0369A1; font-weight: 800; }
-        .time-desc {
-            font-size: 0.9rem;
-            color: #4A5568;
-            margin-bottom: 6px;
-        }
-        .trans-guide {
-            background: #F4F7F6;
-            border-left: 4px solid var(--primary);
-            border-radius: 0 8px 8px 0;
-            padding: 8px 12px;
-            font-size: 0.83rem;
-            color: #2D4A3E;
-            margin-bottom: 6px;
+
+        .tag-blue { background: #E0F2FE; color: #0369A1; border-color: #BAE6FD; }
+        .tag-orange { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+        .tag-green { background: #DCFCE7; color: #15803D; border-color: #BBF7D0; }
+        .tag-purple { background: #F3E8FF; color: #6B21A8; border-color: #E9D5FF; }
+        .tag-yellow { background: #FEF9C3; color: #A16207; border-color: #FEF08A; }
+
+        .item-desc {
+            font-size: 0.84rem;
+            color: #4A5866;
             line-height: 1.5;
+            margin-bottom: 6px;
         }
-        .trans-guide strong { color: #1E3A2F; }
-        .station-snack {
-            background: #FFFDF2;
-            border: 1px dashed #F6D896;
-            border-radius: 10px;
-            padding: 8px 12px;
-            font-size: 0.83rem;
-            color: #854D0E;
-            margin-bottom: 8px;
-        }
-        .food-section {
-            background: #FFFAF5;
-            border-top: 2px dashed #F2E3D5;
-            padding: 16px 20px 20px;
-        }
-        .food-title {
-            font-size: 0.92rem;
-            font-weight: 800;
-            color: var(--coral);
-            margin-bottom: 12px;
-        }
-        .food-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 10px;
-        }
-        .meal-card {
-            background: #FFFFFF;
-            border: 1px solid #F7E5D7;
-            border-radius: 12px;
-            padding: 12px 14px;
-        }
-        .meal-type {
-            font-size: 0.72rem;
-            font-weight: 800;
-            color: var(--coral);
-            margin-bottom: 2px;
-        }
-        .meal-name {
-            font-size: 0.92rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 3px;
-        }
-        .meal-info {
-            font-size: 0.82rem;
-            color: var(--text-sub);
+
+        .trans-memo {
+            background: #F4F8FA;
+            border-left: 3.5px solid var(--fuji-blue);
+            border-radius: 0 10px 10px 0;
+            padding: 7px 10px;
+            font-size: 0.78rem;
+            color: #2F4D66;
+            margin-top: 4px;
             line-height: 1.45;
         }
-        .shopping-guide-card {
-            background: #FFFFFF;
-            border-radius: var(--radius-box);
-            border: 1px solid var(--border-soft);
-            padding: 20px;
-            margin-top: 26px;
-            box-shadow: var(--shadow-card);
+
+        .snack-memo {
+            background: #FFFDF0;
+            border: 1.2px dashed #E5C365;
+            border-radius: 10px;
+            padding: 7px 10px;
+            font-size: 0.78rem;
+            color: #8C6207;
+            margin-top: 6px;
         }
-        .shopping-guide-card h2 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 14px;
+
+        /* Food Recommendations Ribbon */
+        .food-tray {
+            background: #FFFBF7;
+            border-top: 2px dashed #EADACE;
+            padding: 14px 16px 16px;
         }
-        .shopping-grid {
+
+        .tray-title {
+            font-size: 0.84rem;
+            font-weight: 900;
+            color: var(--pastel-coral);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .food-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 12px;
+            grid-template-columns: 1fr;
+            gap: 8px;
         }
-        .dept-box {
-            background: var(--bg-page);
-            padding: 14px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border-soft);
+
+        .f-card {
+            background: #FFFFFF;
+            border: 1.2px solid #EFE4DA;
+            border-radius: 14px;
+            padding: 10px 12px;
         }
-        .dept-box h4 {
-            font-size: 0.92rem;
+
+        .f-type {
+            font-size: 0.68rem;
             font-weight: 800;
-            color: var(--coral);
-            margin-bottom: 4px;
+            color: #D9534F;
+            margin-bottom: 2px;
         }
-        .dept-box p {
-            font-size: 0.82rem;
+
+        .f-name {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 3px;
+        }
+
+        .f-info {
+            font-size: 0.78rem;
             color: var(--text-sub);
-            line-height: 1.5;
+            line-height: 1.4;
         }
+
+        /* =================================================== */
+        /* TAX REFUND & SUPERMARKET INFO BOXES */
+        /* =================================================== */
+        .info-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-main);
+            border: 2px solid var(--border-line);
+            box-shadow: 4px 6px 0px rgba(61, 80, 100, 0.15);
+            padding: 18px 16px;
+            margin-bottom: 22px;
+        }
+
+        .info-title {
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: #FAF7F2;
+            border: 1.2px solid #E5DBD1;
+            border-radius: 16px;
+            padding: 12px 14px;
+        }
+
+        .info-box h4 {
+            font-size: 0.88rem;
+            font-weight: 900;
+            color: #C85A44;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-box h4 span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: #FFF;
+            padding: 1px 8px;
+            border-radius: var(--radius-pill);
+            border: 1px solid #E5DBD1;
+            color: var(--primary-navy);
+        }
+
+        .info-box p {
+            font-size: 0.78rem;
+            color: #4A5866;
+            line-height: 1.48;
+        }
+
         footer {
             text-align: center;
-            padding: 26px 16px 0;
-            font-size: 0.84rem;
+            padding: 24px 16px 30px;
+            font-size: 0.8rem;
             color: var(--text-sub);
+            font-weight: 700;
+        }
+
+        /* Floating Back to Top Button */
+        .fab-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 18px;
+            background: #FFFFFF;
+            border: 2px solid var(--border-line);
+            color: var(--primary-navy);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 3px 4px 0px rgba(61, 80, 100, 0.25);
+            cursor: pointer;
+            z-index: 99;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-sub">♡ LEO & TINA AUTUMN TRIP ♡</div>
-        <h1>2026九月 九州福岡冒險記 ✈️</h1>
-        <p style="font-family: 'Zen Maru Gothic', sans-serif; font-size: 0.95rem; color: #786C5E; font-weight: 700; margin-top: 4px;">〜 2026年9月 九州・福岡の大冒険手帳 〜</p>
-        <div class="header-meta">
-            <span class="meta-tag">✈️ 華航 CI110 (06:50 飛 ➔ 10:00 抵達)</span>
-            <span class="meta-tag">🛫 華航 CI111 (21:00 飛 ➔ 22:40 返抵)</span>
-            <span class="meta-tag hotel">🏨 YADO/Re 薬院（中央區白金1丁目）</span>
-            <span class="meta-tag">⛩️ 櫛田神社・中洲川端・祇園美食・COFFEE COUNTY・酸種麵包・超市攻略</span>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="quick-nav">
-            <a href="#day1" class="nav-btn">Day 1 兼虎/挽肉・岩田屋3F・ONE FUKUOKA・mina天神</a>
-            <a href="#day2" class="nav-btn">Day 2 宮地嶽・櫛田神社・川端商店街・運河城/祇園晚餐</a>
-            <a href="#day3" class="nav-btn">Day 3 大分一日遊 ➔ 晚餐博多車站美食 ➔ 晚間超市大採買</a>
-            <a href="#day4" class="nav-btn">Day 4 晨跑沖澡 ➔ 二選一(LaLaport / 近郊) ➔ 晚餐彈性選</a>
-            <a href="#day5" class="nav-btn">Day 5 睡飽退房 ➔ 六本松酸種麵包・COFFEE COUNTY・16:00燒肉</a>
-            <a href="#tenjin-guide" class="nav-btn">🛍️ 天神百貨與退稅指南</a>
-            <a href="#supermarket" class="nav-btn">🛒 業務超市與四大超市比較</a>
+    <!-- Top Shizuoka Style Nav Bar -->
+    <div class="top-nav">
+        <div>
+            <div class="site-title">LEO & TINA</div>
+            <div class="site-sub">FUKUOKA TRIP 2026 ・ 福岡を旅する</div>
+        </div>
+        <div class="top-pills">
+            <span class="date-badge">9/22 ➔ 9/26</span>
+            <div class="menu-circle" onclick="document.getElementById('converter').scrollIntoView({behavior:'smooth'})">¥</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+
+        <!-- Shizuoka Style Hero Photo Frame -->
+        <div class="hero-frame">
+            <!-- Weather Capsule -->
+            <div class="weather-capsule">
+                <span class="capsule-label">TODAY'S Fukuoka</span>
+                <span class="capsule-date">9 / 22 TUE</span>
+                <span class="capsule-temp">26°C / 19°C ☀️</span>
+            </div>
+
+            <!-- Graphic Illustration Box (Matching Shizuoka Illustration) -->
+            <div class="hero-img-box">
+                <svg class="hero-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Sky Gradient -->
+                    <rect width="500" height="240" fill="url(#skyGradient)" />
+                    <!-- Soft Clouds -->
+                    <circle cx="80" cy="50" r="30" fill="white" fill-opacity="0.85"/>
+                    <circle cx="110" cy="45" r="40" fill="white" fill-opacity="0.85"/>
+                    <circle cx="140" cy="55" r="28" fill="white" fill-opacity="0.85"/>
+                    
+                    <circle cx="420" cy="40" r="25" fill="white" fill-opacity="0.8"/>
+                    <circle cx="445" cy="35" r="35" fill="white" fill-opacity="0.8"/>
+                    
+                    <!-- Cute Airplane -->
+                    <g transform="translate(240, 32) rotate(-5)">
+                        <path d="M0 8 L22 8 L28 2 L33 2 L30 8 L42 8 L45 5 L48 5 L46 11 L10 11 Z" fill="#3D5064"/>
+                    </g>
+
+                    <!-- Sea Waters -->
+                    <rect y="135" width="500" height="105" fill="#5AA9E6" />
+                    <!-- Waves -->
+                    <path d="M0 135 Q 25 130, 50 135 T 100 135 T 150 135 T 200 135 T 250 135 T 300 135 T 350 135 T 400 135 T 450 135 T 500 135 L500 240 L0 240 Z" fill="#3B8FD0"/>
+                    
+                    <!-- Distant Green Hills & City -->
+                    <path d="M0 138 Q 60 115, 130 132 T 260 128 T 390 130 T 500 135 L500 240 L0 240 Z" fill="#88C7A0"/>
+                    
+                    <!-- Mountain / Fukuoka Hakata Landmark -->
+                    <polygon points="250,75 330,135 170,135" fill="#A5C9EC"/>
+                    <!-- Snow Cap -->
+                    <polygon points="250,75 278,96 265,92 250,97 235,92 222,96" fill="white"/>
+
+                    <!-- Japanese Cute Town Foreground -->
+                    <rect x="180" y="175" width="80" height="45" rx="3" fill="#FFFFFF" stroke="#3D5064" stroke-width="2"/>
+                    <!-- Windows -->
+                    <rect x="192" y="185" width="8" height="8" fill="#3D5064"/>
+                    <rect x="206" y="185" width="8" height="8" fill="#3D5064"/>
+                    <rect x="220" y="185" width="8" height="8" fill="#3D5064"/>
+                    <rect x="234" y="185" width="8" height="8" fill="#3D5064"/>
+                    <rect x="192" y="200" width="8" height="8" fill="#3D5064"/>
+                    <rect x="206" y="200" width="8" height="8" fill="#3D5064"/>
+                    <rect x="220" y="200" width="8" height="8" fill="#3D5064"/>
+                    <rect x="234" y="200" width="8" height="8" fill="#3D5064"/>
+
+                    <!-- Small House -->
+                    <polygon points="135,185 155,170 175,185" fill="#FFB4A2" stroke="#3D5064" stroke-width="2"/>
+                    <rect x="140" y="185" width="30" height="35" fill="#FFFFFF" stroke="#3D5064" stroke-width="2"/>
+                    <rect x="150" y="198" width="10" height="22" fill="#3D5064"/>
+
+                    <!-- Torii Gate / Tree -->
+                    <circle cx="110" cy="200" r="16" fill="#74C69D" stroke="#3D5064" stroke-width="2"/>
+                    <circle cx="285" cy="195" r="18" fill="#95D5B2" stroke="#3D5064" stroke-width="2"/>
+
+                    <defs>
+                        <linearGradient id="skyGradient" x1="250" y1="0" x2="250" y2="150" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#CAE6F8"/>
+                            <stop offset="1" stop-color="#E8F4FC"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="speech-bubble">
+                    <span>🕊️ COME TO FUKUOKA WITH US!</span>
+                </div>
+            </div>
+
+            <!-- Meta Badges -->
+            <div class="hero-meta-strip">
+                <span class="meta-pill">✈️ 華航 CI110 / CI111</span>
+                <span class="meta-pill highlight">🏨 YADO/Re 薬院（中央區白金1丁目）</span>
+                <span class="meta-pill">🚇 全程地下鐵・西鐵順遊</span>
+            </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- LIVE CURRENCY CONVERTER (台幣 / 日幣 即時換算小工具) -->
+        <!-- =================================================== -->
+        <div class="converter-card" id="converter">
+            <div class="converter-header">
+                <div class="converter-title">
+                    <span class="badge-icon">¥</span>
+                    <span>台幣・日幣 即時快速換算</span>
+                </div>
+                <div class="rate-control">
+                    <span>匯率:</span>
+                    <input type="number" id="customRate" value="0.21" step="0.001" oninput="calculateFromRateChange()">
+                </div>
+            </div>
+
+            <div class="calc-grid">
+                <!-- JPY Box -->
+                <div class="input-box">
+                    <div class="input-label">
+                        <span>日幣 (JPY)</span>
+                        <span>円 ¥</span>
+                    </div>
+                    <input type="number" id="inputJPY" placeholder="1000" value="1000" oninput="convertJPYtoTWD()">
+                </div>
+
+                <!-- Swap Button -->
+                <div class="swap-icon" onclick="toggleCurrencyFocus()">⇄</div>
+
+                <!-- TWD Box -->
+                <div class="input-box">
+                    <div class="input-label">
+                        <span>台幣 (TWD)</span>
+                        <span>NT$</span>
+                    </div>
+                    <input type="number" id="inputTWD" placeholder="210" value="210" oninput="convertTWDtoJPY()">
+                </div>
+            </div>
+
+            <!-- Quick Amounts for Japan Shopping -->
+            <div class="quick-amounts">
+                <span class="amt-btn" onclick="quickSetJPY(108)">108円 (百円店)</span>
+                <span class="amt-btn" onclick="quickSetJPY(5000)">5,000円 (退稅門檻)</span>
+                <span class="amt-btn" onclick="quickSetJPY(10000)">10,000円</span>
+                <span class="amt-btn" onclick="quickSetJPY(30000)">30,000円</span>
+                <span class="amt-btn" onclick="quickSetJPY(50000)">50,000円 (黑繃帶)</span>
+            </div>
+        </div>
+
+        <!-- Quick Day Nav Scroll -->
+        <div class="day-nav-scroll">
+            <a href="#d1" class="day-nav-pill active">D1 抵達・天神選品・屋台</a>
+            <a href="#d2" class="day-nav-pill">D2 宮地嶽・櫛田・運河城</a>
+            <a href="#d3" class="day-nav-pill">D3 大分一日遊・車站晚餐</a>
+            <a href="#d4" class="day-nav-pill">D4 大濠晨跑・LaLaport/近郊</a>
+            <a href="#d5" class="day-nav-pill">D5 六本松麵包・16:00燒肉</a>
+            <a href="#tax-guide" class="day-nav-pill">🛍️ 退稅與百貨</a>
+            <a href="#super-guide" class="day-nav-pill">🛒 超市指南</a>
         </div>
 
         <!-- ================= DAY 1 ================= -->
-        <div class="day-card" id="day1">
-            <div class="day-header">
-                <div><span class="day-badge">DAY 1</span> <span class="day-date">9/22 (二)</span></div>
-                <span class="day-theme">抵達福岡 ➔ 兼虎沾麵/挽肉と米 ➔ 岩田屋3F與專櫃退稅 ➔ CABaN大名 ➔ 中洲屋台</span>
+        <div class="day-schedule-card" id="d1">
+            <div class="schedule-header">
+                <div class="date-title">
+                    <span class="badge-day">DAY 1</span>
+                    <span>9/22 (二)</span>
+                </div>
+                <span class="theme-pill">天神大採買 ➔ 中洲屋台</span>
             </div>
-            <div class="timeline">
-                <div class="time-block">
-                    <div class="time-label">10:00 - 12:00</div>
-                    <div class="time-content">
-                        <h3>抵達福岡出關 ➔ 地鐵直達飯店寄放行李 <span class="tag tag-trans">地鐵</span></h3>
-                        <div class="trans-guide"><strong>🚇 交通方式：</strong>國際線接駁公車至國內線 ➔ 空港線至「博多站」 ➔ 站內轉七隈線至「藥院站」（僅 2 站 4 分鐘），1 號出口步行 4 分鐘抵達 YADO/Re 薬院寄存大行李！</div>
+            <div class="timeline-box">
+                <div class="item-row">
+                    <div class="time-badge">10:00-12:00</div>
+                    <div class="item-main">
+                        <h3>抵達出關 ➔ 直奔飯店寄放行李 <span class="tag-pill tag-blue">地鐵</span></h3>
+                        <p class="item-desc">國際線免費公車至國內線 ➔ 空港線至博多站 ➔ 站內轉七隈線至「藥院站」（2 站 4 分鐘），1 號出口步行 4 分抵達 YADO/Re 薬院。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">12:30 - 14:00</div>
-                    <div class="time-content">
-                        <h3>午餐首選：麵屋兼虎 或 挽肉と米（今泉店） <span class="tag tag-food">天神名店</span></h3>
-                        <div class="trans-guide"><strong>🚃 交通方式：</strong>藥院站搭西鐵電車 1 站（2 分鐘）直達天神，地下通道直通 PARCO B2！</div>
-                        <p class="time-desc">享受極厚魚介豚骨「麵屋兼虎」沾麵；或品嚐炭火現烤純牛「挽肉と米」漢堡排搭配羽釜炊飯與生生蛋。</p>
+                <div class="item-row">
+                    <div class="time-badge">12:30-14:00</div>
+                    <div class="item-main">
+                        <h3>午餐：麵屋兼虎 或 挽肉と米 <span class="tag-pill tag-orange">人氣美食</span></h3>
+                        <p class="item-desc">藥院搭西鐵電車 1 站（2 分鐘）直達天神！品嚐濃厚魚介「麵屋兼虎」沾麵（4.3★）或炭火現烤純牛「挽肉と米」今泉店（4.4★）。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">14:00 - 18:45</div>
-                    <div class="time-content">
-                        <h3>天神大血拼！岩田屋3F美妝 ➔ CABaN大名 ➔ ONE FUKUOKA全新地標 ➔ mina天神 & AEON <span class="tag tag-shop">旗艦採買</span></h3>
-                        <p class="time-desc">
-                            1. <strong>岩田屋本店（IWATAYA）</strong>：新館 1F 憑護照領 <strong>5% 折扣券</strong>，專櫃美妝（HR 黑繃帶、肌膚之鑰等）集中掃貨；搭手扶梯直上 <strong>新館 3 樓</strong> 探索頂級設計師與國際當代選品服飾，7F 統一退稅！<br>
-                            2. <strong>CABaN 福岡店（大名 1 丁目）</strong>：自岩田屋步行 3 分鐘即達！日系頂級羊絨針織與極簡剪裁必逛！<br>
-                            3. <strong>ONE FUKUOKA BLDG.（ワンビル）</strong>：福岡天神正核心全新完工巨型地標！地下街直通，集結 126 間高質感生活美學、文創選品、蔦屋書店與時髦咖啡。<br>
-                            4. <strong>mina 天神 ＆ 隔壁 AEON SHOPPERS 福岡</strong>：地下街一路往北直達！<strong>mina 天神</strong>擁有「全九州最大」UNIQLO、GU、LOFT 與大型 3COINS+plus；1F 與 4F 有連通道直通隔壁的 <strong>AEON SHOPPERS 福岡</strong>（大型 MUJI 無印良品、DAISO 大創與佔地 4 層的 AEON 超市），平價生活雜貨服飾一次買齊！
+                <div class="item-row">
+                    <div class="time-badge">14:00-18:45</div>
+                    <div class="item-main">
+                        <h3>天神核心逛街線！單向順遊不走回頭路 <span class="tag-pill tag-purple">選品採買</span></h3>
+                        <p class="item-desc">
+                            1. <strong>岩田屋本店（IWATAYA）</strong>：新館 1F 憑護照領 5% 券，掃貨專櫃美妝（HR 黑繃帶）；直上 <strong>新館 3 樓</strong> 探索頂級設計師與國際當代選品服飾，7F 退稅！<br>
+                            2. <strong>CABaN 福岡店（大名 1 丁目）</strong>：自岩田屋步行 3 分即達！日系頂級羊絨針織與都會極簡剪裁必逛！<br>
+                            3. <strong>ONE FUKUOKA BLDG.（天神全新摩天地標）</strong>：地下街直通，匯聚 126 間生活風格選物、蔦屋書店與咖啡。<br>
+                            4. <strong>mina 天神 ＆ 連通 AEON SHOPPERS 福岡</strong>：地下街一路往北直達！擁有全九州最大 UNIQLO、GU、LOFT，1F/4F 連通隔壁 AEON 大超市與 MUJI 無印良品！
                         </p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">18:45 - 21:30</div>
-                    <div class="time-content">
-                        <h3>中洲特色屋台巡禮 ＆ 鐵鍋煎餃 ➔ 散步回飯店 <span class="tag tag-food">晚餐屋台</span></h3>
-                        <div class="trans-guide"><strong>🚶 交通方式：</strong>自天神步行 10 分鐘至中洲屋台；餐後漫步渡邊通 15 分鐘（或七隈線 1 站）回 YADO/Re。</div>
-                        <p class="time-desc">推薦中洲明太子專賣屋台「ぴょん吉」（明太子起司玉子燒、明太子煎餃）或天神炒拉麵始祖「小金ちゃん」。</p>
+                <div class="item-row">
+                    <div class="time-badge">18:45-21:30</div>
+                    <div class="item-main">
+                        <h3>中洲特色屋台巡禮 ＆ 鐵鍋餃子 ➔ 散步回飯店 <span class="tag-pill tag-yellow">晚餐屋台</span></h3>
+                        <p class="item-desc">天神步行 10 分跨過那珂川到中洲屋台，品嚐「屋台ぴょん吉（4.3★）」明太子煎餃與起司玉子燒，或天神「小金ちゃん」炒拉麵。餐後沿渡邊通漫步 15 分回 YADO/Re。</p>
                     </div>
                 </div>
             </div>
-            <div class="food-section">
-                <div class="food-title">🍽️ Day 1 美食清單</div>
-                <div class="food-grid">
-                    <div class="meal-card">
-                        <div class="meal-type">午餐人氣二選一</div>
-                        <div class="meal-name">麵屋兼虎（PARCO） ｜ 挽肉と米（今泉店）</div>
-                        <div class="meal-info">辛辛沾麵濃郁彈牙；挽肉と米每週五早 9:00 TableCheck 線上預約。</div>
+            <div class="food-tray">
+                <div class="tray-title">🍽️ DAY 1 推薦美饌（皆 ≥ 4.2★）</div>
+                <div class="food-cards-grid">
+                    <div class="f-card">
+                        <div class="f-type">午餐首選 ★4.3 ~ 4.4</div>
+                        <div class="f-name">麵屋兼虎（PARCO 4.3★） ｜ 挽肉と米（今泉店 4.4★）</div>
+                        <div class="f-info">辛辛沾麵與肉盛沾麵必點；挽肉と米炭火現烤純牛漢堡排配羽釜炊飯。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">下午茶</div>
-                        <div class="meal-name">HARBS 水果千層蛋糕 ｜ Manu Coffee</div>
-                        <div class="meal-info">PARCO 新館 2F HARBS；大名街區手沖代表 Manu Coffee。</div>
+                    <div class="f-card">
+                        <div class="f-type">下午茶 ★4.2 ~ 4.3</div>
+                        <div class="f-name">HARBS 水果千層（PARCO 4.2★） ｜ Manu Coffee（大名 4.3★）</div>
+                        <div class="f-info">PARCO 新館 2F HARBS 招牌千層；大名潮流手沖精品咖啡。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">晚餐 & 屋台</div>
-                        <div class="meal-name">屋台ぴょん吉 ｜ 鐵鍋餃子 鉄なべ</div>
-                        <div class="meal-info">熱騰騰金黃鐵鍋煎餃佐柚子胡椒，博多夜生活必體驗！</div>
+                    <div class="f-card">
+                        <div class="f-type">晚餐屋台 ★4.3</div>
+                        <div class="f-name">屋台ぴょん吉（中洲 4.3★） ｜ 祇園鉄なべ（4.2★）</div>
+                        <div class="f-info">金黃鐵鍋煎餃、烤雞皮串燒蘸柚子胡椒，體驗福岡在地夜生活。</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ================= DAY 2 ================= -->
-        <div class="day-card" id="day2">
-            <div class="day-header">
-                <div><span class="day-badge">DAY 2</span> <span class="day-date">9/23 (三)</span></div>
-                <span class="day-theme">早晨宮地嶽神社 ➔ 櫛田神社 & 川端通商店街 ➔ 博多運河城 ➔ 祇園/運河城名物晚餐</span>
+        <div class="day-schedule-card" id="d2">
+            <div class="schedule-header">
+                <div class="date-title">
+                    <span class="badge-day">DAY 2</span>
+                    <span>9/23 (三)</span>
+                </div>
+                <span class="theme-pill">宮地嶽 ➔ 櫛田神社 ➔ 運河城</span>
             </div>
-            <div class="timeline">
-                <div class="time-block">
-                    <div class="time-label">08:40 - 12:30</div>
-                    <div class="time-content">
-                        <h3>博多站買可頌 ➔ 宮地嶽神社（光之道・海景石階） <span class="tag tag-spot">近郊</span> <span class="tag tag-bakery">現烤可頌</span></h3>
-                        <div class="trans-guide"><strong>🚃 交通方式：</strong>藥院搭七隈線（4 分鐘）至博多站 ➔ 【JR 中央口對面秒買 il FORNO del MIGNON 現烤迷你可頌帶上車吃】 ➔ JR 快速（25 分鐘）直達福間站 ➔ 轉西鐵巴士（5 分鐘）直達神社。</div>
-                        <p class="time-desc">早晨順光參拜 3 噸巨大注連繩，石階頂端眺望通往大海的筆直大道！參道享用熱騰騰現烤松枝餅。</p>
+            <div class="timeline-box">
+                <div class="item-row">
+                    <div class="time-badge">08:40-12:30</div>
+                    <div class="item-main">
+                        <h3>博多站買可頌 ➔ 宮地嶽神社（光之道海景） <span class="tag-pill tag-blue">近郊</span></h3>
+                        <div class="snack-memo">🥐 <strong>il FORNO del MIGNON（4.4★）：</strong>博多站 JR 中央口對面秒買熱騰騰迷你可頌帶上車！</div>
+                        <p class="item-desc">博多站搭 JR 快速（25 分鐘）直達福間站，轉巴士 5 分鐘抵達。早晨順光參拜 3 噸巨大注連繩，石階頂端俯瞰一路筆直通往大海的大道！參道吃現烤松枝餅。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">13:00 - 17:30</div>
-                    <div class="time-content">
-                        <h3>直達回博多！櫛田神社 ➔ 川端通商店街 ➔ 博多運河城大採買 <span class="tag tag-spot">神社散策</span> <span class="tag tag-shop">血拼逛街</span></h3>
-                        <div class="trans-guide"><strong>🚶 超順散步動線（全在一區！）：</strong>福間站搭 JR 快速（25 分鐘）直達回博多站 ➔ 七隈線搭 1 站至「櫛田神社前站」（或自博多站散步 10 分鐘），櫛田神社、川端通商店街、博多運河城彼此緊鄰相通！</div>
-                        <p class="time-desc">
-                            1. <strong>櫛田神社</strong>：博多的總鎮守，參拜千年銀杏樹，欣賞震撼的常設「博多祇園山笠」巨型彩繪神轎，摸靈牛祈福求開運！<br>
-                            2. <strong>川端通商店街</strong>：博多最古老商店街，自櫛田神社門口無縫串連！漫步日式傳統雜貨店、古風喫茶店、在地藥妝小店，氛圍悠然自得。<br>
-                            3. <strong>博多運河城（Canal City）</strong>：商店街尾端直接連通運河城！採買 Nike、Adidas、Alpen Outdoors 大型露營戶外旗艦店，觀賞整點水舞秀。
-                        </p>
+                <div class="item-row">
+                    <div class="time-badge">13:00-17:30</div>
+                    <div class="item-main">
+                        <h3>櫛田神社 ➔ 川端通商店街 ➔ 運河城大採買 <span class="tag-pill tag-green">無縫漫遊</span></h3>
+                        <div class="trans-memo"><strong>🚶 動線順暢：</strong>JR 快速直達博多站，轉七隈線 1 站至「櫛田神社前站」，神社、商店街與運河城全在一區！</div>
+                        <p class="item-desc">參拜博多總鎮守櫛田神社（摸神牛、看巨型山笠神轎），穿過古風川端通商店街，直通博多運河城逛 Alpen Outdoors 露營旗艦與運動大店看水舞秀！</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">18:00 - 21:00</div>
-                    <div class="time-content">
-                        <h3>運河城周邊 或 祇園人氣名物晚餐 ➔ 地鐵 4 分鐘回飯店 <span class="tag tag-food">祇園晚餐</span></h3>
-                        <div class="trans-guide"><strong>🚇 極速回飯店：</strong>用餐後至「櫛田神社前站」搭七隈線<strong>僅 1 站（2 分鐘）直達藥院站</strong>，大包小包戰利品直接放回房間！</div>
-                        <p class="time-desc">在祇園或運河城周邊享用道地博多名物晚餐，完全不用遠程奔波。</p>
+                <div class="item-row">
+                    <div class="time-badge">18:00-21:00</div>
+                    <div class="item-main">
+                        <h3>運河城 / 祇園名物晚餐 ➔ 七隈線 2 分極速回飯店 <span class="tag-pill tag-orange">祇園美饌</span></h3>
+                        <p class="item-desc">在祇園享用名物晚餐。吃完在「櫛田神社前站」搭地鐵七隈線僅 1 站（2 分鐘）直達藥院站，戰利品秒速放回房間！</p>
                     </div>
                 </div>
             </div>
-            <div class="food-section">
-                <div class="food-title">🍽️ Day 2 晚餐推薦（運河城周邊 ＆ 祇園精選）</div>
-                <div class="food-grid">
-                    <div class="meal-card">
-                        <div class="meal-type">祇園必吃首選（米其林推薦）</div>
-                        <div class="meal-name">祇園鉄なべ（祇園鐵鍋餃子）</div>
-                        <div class="meal-info">祇園站徒步 3 分鐘！外皮金黃焦脆的鐵鍋一口煎餃，內餡多汁鮮甜，沾上柚子胡椒令人欲罷不能！</div>
+            <div class="food-tray">
+                <div class="tray-title">🍽️ DAY 2 晚餐推薦（祇園周邊皆 ≥ 4.2★）</div>
+                <div class="food-cards-grid">
+                    <div class="f-card">
+                        <div class="f-type">鐵鍋煎餃 ★4.2（米其林必比登）</div>
+                        <div class="f-name">祇園鉄なべ（祇園站徒步 3 分）</div>
+                        <div class="f-info">金黃焦脆鐵鍋一口餃，沾辣油柚子胡椒超過癮！</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">水炊雞肉鍋名店（祇園本店）</div>
-                        <div class="meal-name">博多水炊き とり田（鳥田 祇園本店）</div>
-                        <div class="meal-info">櫛田神社旁！以九州銘柄雞慢火熬煮的金黃濃郁雞白湯，搭配滑嫩雞肉與手打雞肉丸，高雅清甜。</div>
+                    <div class="f-card">
+                        <div class="f-type">水炊雞肉鍋 ★4.4（祇園本店）</div>
+                        <div class="f-name">博多水炊き とり田（櫛田神社旁）</div>
+                        <div class="f-info">九州銘柄雞熬煮金黃濃郁雞白湯，高雅清甜無腥味。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">運河城人氣牛腸鍋</div>
-                        <div class="meal-name">博多もつ鍋 前田屋（運河城店 / 總本店）</div>
-                        <div class="meal-info">運河城旁排隊名店！招牌和牛「白味噌牛腸鍋」，牛腸肥嫩甘甜，湯頭濃郁順口，還有名物胡麻鯖魚！</div>
-                    </div>
-                    <div class="meal-card">
-                        <div class="meal-type">櫛田神社旁人氣首選 ★ 4.3</div>
-                        <div class="meal-name">博多あかちょこべ（Akachokobe 4.3★） ｜ 備選：うどん平（4.3★）</div>
-                        <div class="meal-info">櫛田神社正對面！以茶壺裝麵的「水釜揚烏龍」與元祖黑豬肉乾咖哩麵聞名，手打胚芽麵條極Q彈；或造訪名店「うどん平」現炸酥脆牛蒡天婦羅烏龍麵！</div>
+                    <div class="f-card">
+                        <div class="f-type">味噌牛腸鍋 ★4.6（超高分好評）</div>
+                        <div class="f-name">博多もつ鍋 前田屋（運河城店 / 總本店）</div>
+                        <div class="f-info">和牛牛腸肥嫩甘甜，濃郁白味噌湯底，必點胡麻鯖魚。</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ================= DAY 3 ================= -->
-        <div class="day-card" id="day3">
-            <div class="day-header">
-                <div><span class="day-badge">DAY 3</span> <span class="day-date">9/24 (四)</span></div>
-                <span class="day-theme">KKday 大分一日遊 ➔ 晚餐博多車站美食 ➔ 晚間超市大採買</span>
+        <div class="day-schedule-card" id="d3">
+            <div class="schedule-header">
+                <div class="date-title">
+                    <span class="badge-day">DAY 3</span>
+                    <span>9/24 (四)</span>
+                </div>
+                <span class="theme-pill">大分一日遊 ➔ 車站晚餐 ➔ 超市採買</span>
             </div>
-            <div class="timeline">
-                <div class="time-block">
-                    <div class="time-label">08:00 - 08:30</div>
-                    <div class="time-content">
-                        <h3>博多站集合出發 ➔ 專車前往大分縣 <span class="tag tag-trans">大巴</span> <span class="tag tag-bakery">早餐</span></h3>
-                        <div class="trans-guide"><strong>🚇 交通方式：</strong>藥院搭七隈線 4 分鐘直達博多站筑紫口搭專車。博多站買 TRANDOR 咖哩麵包上車吃。</div>
+            <div class="timeline-box">
+                <div class="item-row">
+                    <div class="time-badge">08:00-08:30</div>
+                    <div class="item-main">
+                        <h3>博多站筑紫口專車出發 ➔ 前往大分縣 <span class="tag-pill tag-blue">專車</span></h3>
+                        <p class="item-desc">藥院搭七隈線 4 分鐘直達博多站，筑紫口集合搭大巴。車站買 TRANDOR 咖哩麵包上車吃。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">10:30 - 16:30</div>
-                    <div class="time-content">
-                        <h3>由布院金鱗湖・湯之坪童話老街 ➔ 別府海地獄溫泉 <span class="tag tag-spot">大分名景</span></h3>
-                        <p class="time-desc">欣賞金鱗湖如畫倒影；湯之坪街吃金賞可樂餅、Milch 半熟起司蛋糕，午餐吃排隊名店「由布まぶし 心」豐後牛釜飯三吃；下午朝聖高達 98 度蔚藍鈷藍色海地獄，吃溫泉布丁、泡足湯！</p>
+                <div class="item-row">
+                    <div class="time-badge">10:30-16:30</div>
+                    <div class="item-main">
+                        <h3>由布院金鱗湖・湯之坪童話村 ➔ 別府海地獄 <span class="tag-pill tag-green">絕美秘境</span></h3>
+                        <p class="item-desc">欣賞金鱗湖夢幻倒影；湯之坪街吃金賞可樂餅、Milch 半熟起司蛋糕，午餐吃排隊名店「由布まぶし 心（4.3★）」豐後牛釜飯三吃；下午朝聖 98 度蔚藍鈷藍色海地獄，吃溫泉布丁、泡足湯！</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">18:30 - 20:00</div>
-                    <div class="time-content">
-                        <h3>專車返抵博多站 ➔ 直接在博多車站享用豐盛晚餐 <span class="tag tag-food">車站美食</span></h3>
-                        <p class="time-desc">大巴下車就在博多站！不用再轉車，直上 JR 博多城 9F/10F「City Dining 空天 (Kuuten)」或 B1「博多一番街」享用人氣晚餐。</p>
+                <div class="item-row">
+                    <div class="time-badge">18:30-20:00</div>
+                    <div class="item-main">
+                        <h3>專車返抵博多站 ➔ 車站內直接享用豐盛晚餐 <span class="tag-pill tag-orange">免轉車</span></h3>
+                        <p class="item-desc">大巴下車就在博多站！不用再轉車，直上 JR 博多城 9F/10F「空天 (Kuuten)」或筑紫口都酒店享用名店。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">20:15 - 21:45</div>
-                    <div class="time-content">
-                        <h3>【超市之夜】平價大採購！業務超市 或 24H 大型生鮮超市 <span class="tag tag-super">超市採買</span></h3>
-                        <div class="trans-guide"><strong>🚶 交通方式：</strong>從博多站搭七隈線 4 分鐘回藥院站，徒步展開今晚的超市掃貨之旅！</div>
-                        <p class="time-desc">趁今晚把想買的日式調味料、大包裝零食、泡麵、當季水果（麝香葡萄/水蜜桃）、優格鮮奶一次買齊！</p>
+                <div class="item-row">
+                    <div class="time-badge">20:15-21:45</div>
+                    <div class="item-main">
+                        <h3>【超市之夜】平價大採購！業務超市 或 LOPIA <span class="tag-pill tag-yellow">超市掃貨</span></h3>
+                        <p class="item-desc">趁今晚把想買的日式調味料、大包裝零食、泡麵、當季水果（麝香葡萄/水蜜桃）、鮮奶一次買齊！博多站可逛 LOPIA，或搭回藥院逛業務超市清川店。</p>
                     </div>
                 </div>
             </div>
-            <div class="food-section">
-                <div class="food-title">🍽️ Day 3 晚餐推薦（博多車站內精選）</div>
-                <div class="food-grid">
-                    <div class="meal-card">
-                        <div class="meal-type">呼子活透抽生魚片首選</div>
-                        <div class="meal-name">博多 魚蔵（博多站筑紫口 都酒店 2F）</div>
-                        <div class="meal-info">佐賀呼子直送活透抽生魚片二吃（晶瑩刺身脆甜＋觸角炸天婦羅），下巴下車走路 1 分鐘即達！</div>
+            <div class="food-tray">
+                <div class="tray-title">🍽️ DAY 3 晚餐推薦（博多站內直達皆 ≥ 4.2★）</div>
+                <div class="food-cards-grid">
+                    <div class="f-card">
+                        <div class="f-type">呼子活透抽生魚片 ★4.3</div>
+                        <div class="f-name">博多 魚蔵（筑紫口 都酒店 2F）</div>
+                        <div class="f-info">大巴下車走路 1 分鐘！晶瑩透亮活烏賊二吃（刺身脆甜＋炸天婦羅）。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">頂級明太子土鍋飯</div>
-                        <div class="meal-name">椒房庵（JR 博多城 9F 空天）</div>
-                        <div class="meal-info">茅乃舍旗下名店！以專用土鍋現煮北海道羽釜米飯，搭配極上椒房庵明太子與特製九州鄉土料理。</div>
+                    <div class="f-card">
+                        <div class="f-type">頂級明太子土鍋飯 ★4.4</div>
+                        <div class="f-name">椒房庵（JR 博多城 9F 空天）</div>
+                        <div class="f-info">茅乃舍旗下名店！專用土鍋炊煮羽釜飯，搭配極上明太子。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">仙台炭烤牛舌</div>
-                        <div class="meal-name">仙臺牛舌 炭燒利久（JR 博多城 9F）</div>
-                        <div class="meal-info">仙台炭烤厚切牛舌定食，炭香撲鼻、厚脆多汁，附清燉牛尾湯與麥飯。</div>
-                    </div>
-                    <div class="meal-card">
-                        <div class="meal-type">排隊現炸天婦羅</div>
-                        <div class="meal-name">天婦羅のひらお（天ぷらのひらお 博多站南）</div>
-                        <div class="meal-info">福岡庶民排隊天花板！現炸香酥天婦羅一件一件送上桌，無限享用名物柚子明太烏賊醃菜！</div>
+                    <div class="f-card">
+                        <div class="f-type">仙台厚切炭烤牛舌 ★4.2</div>
+                        <div class="f-name">仙臺牛舌 炭燒利久（JR 博多城 9F）</div>
+                        <div class="f-info">炭香撲鼻多汁厚切牛舌定食，附牛尾清湯與燕麥飯。</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ================= DAY 4 ================= -->
-        <div class="day-card" id="day4">
-            <div class="day-header">
-                <div><span class="day-badge">DAY 4</span> <span class="day-date">9/25 (五)</span></div>
-                <span class="day-theme">早晨大濠晨跑沖澡 ➔ 【二選一：LaLaport鋼彈 / 近郊糸島柳川】 ➔ 晚餐自由選</span>
+        <div class="day-schedule-card" id="d4">
+            <div class="schedule-header">
+                <div class="date-title">
+                    <span class="badge-day">DAY 4</span>
+                    <span>9/25 (五)</span>
+                </div>
+                <span class="theme-pill">大濠晨跑 ➔ LaLaport/近郊 ➔ 晚餐彈性選</span>
             </div>
-            <div class="timeline">
-                <div class="time-block">
-                    <div class="time-label">07:30 - 10:30</div>
-                    <div class="time-content">
-                        <h3>大濠公園晨跑 ➔ 湖畔八女茶 ➔ 回飯店舒服沖澡更衣 <span class="tag tag-spot">晨跑慢活</span></h3>
-                        <div class="trans-guide"><strong>🚇 交通方式：</strong>藥院搭七隈線至天神南，轉空港線至大濠公園站（12 分鐘）。跑完搭回藥院站，步行 4 分回 YADO/Re 痛快沖熱水澡！</div>
-                        <p class="time-desc">清晨在 2 公里專業平坦橡膠跑道晨跑，湖畔木造「&LOCALS」喝特選八女茶配手作熱厚玉子燒；跑完回飯店洗個舒服熱水澡，換上好看衣服從容出門！</p>
+            <div class="timeline-box">
+                <div class="item-row">
+                    <div class="time-badge">07:30-10:30</div>
+                    <div class="item-main">
+                        <h3>大濠公園晨跑 ➔ 湖畔八女茶 ➔ 回飯店舒服沖澡更衣 <span class="tag-pill tag-blue">晨跑沖澡</span></h3>
+                        <p class="item-desc">清晨在 2 公里專業平坦跑道晨跑，木造「&LOCALS（4.2★）」喝八女茶配手作熱厚玉子燒；跑完搭地鐵回藥院站，回房間痛快沖熱水澡、換好看衣服出門！</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">11:30 - 17:00</div>
-                    <div class="time-content">
-                        <h3>本日午後行程【方案 A 或 方案 B 二選一】 <span class="tag tag-shop">彈性精選</span></h3>
-                        <p class="time-desc">
-                            <strong>【選擇 A：LaLaport 福岡旗艦購物 ＋ 鋼彈】</strong><br>
-                            • 中午在祇園享用 <strong>「Caffee Espresso」現炒香濃義大利麵</strong> 配濃縮咖啡。<br>
-                            • 博多站筑紫口搭直達公車（20 分鐘）直達 LaLaport 門口，朝聖 <strong>1:1 實物大 ν 鋼彈立像</strong>，開逛全九州最大無印良品、大型 3COINS、露營運動裝備品牌，全館統一退稅！<br><br>
-                            <strong>【選擇 B：福岡絕美近郊一日遊（不繞路推薦）】</strong><br>
-                            • <em>首選 1 糸島（Itoshima）海景慢活</em>：JR 筑肥線一線直達，櫻井二見之浦海中白色鳥居與夫婦岩，日落大道海景木屋咖啡館放空看海。<br>
-                            • <em>首選 2 柳川（Yanagawa）古風水鄉</em>：飯店旁西鐵藥院站搭特急 <strong>45 分鐘一線直達</strong>，輕舟穿梭柳樹水鄉，品嚐百年元祖蒸鰻魚飯！
+                <div class="item-row">
+                    <div class="time-badge">11:30-17:00</div>
+                    <div class="item-main">
+                        <h3>午後行程【二選一：LaLaport 鋼彈 或 近郊慢活】 <span class="tag-pill tag-purple">自由選擇</span></h3>
+                        <p class="item-desc">
+                            <strong>【選擇 A：LaLaport 旗艦購物 ＋ 鋼彈】</strong><br>
+                            • 中午祇園享用 <strong>Caffee Espresso</strong> 現炒香濃義大利麵配濃縮咖啡。<br>
+                            • 博多站搭直達公車 20 分至 LaLaport，看 <strong>1:1 ν 鋼彈立像</strong>，逛全九州最大無印良品與露營日雜，全館統一退稅！<br><br>
+                            <strong>【選擇 B：福岡絕美近郊一日遊】</strong><br>
+                            • <em>柳川（Yanagawa）</em>：西鐵藥院站特急 45 分一線直達，運河輕舟遊船吃百年元祖蒸鰻魚飯！<br>
+                            • <em>糸島（Itoshima）</em>：JR 筑肥線直達，看櫻井二見之浦海中白色鳥居與夫婦岩，喝海景木屋咖啡。
                         </p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">17:30 - 21:00</div>
-                    <div class="time-content">
-                        <h3>回飯店放戰利品 ➔ 彈性晚餐時間（精選口袋名單選擇） <span class="tag tag-food">精選推薦</span></h3>
-                        <div class="trans-guide"><strong>🚶 交通方式：</strong>回 YADO/Re 卸下戰利品稍作休息，周邊春吉、渡邊通與藥院步行 5–12 分鐘內皆有頂級美食！</div>
-                        <p class="time-desc">今晚保留彈性！可依照當天逛街後的心情，在下方精選的 4.2★ 以上口袋名單中自由挑選（海鮮爐端燒、炭火燒鳥、極上居酒屋或精緻小料理）。</p>
+                <div class="item-row">
+                    <div class="time-badge">17:30-21:00</div>
+                    <div class="item-main">
+                        <h3>回飯店放戰利品 ➔ 彈性晚餐時間（4.4★~4.5★ 口袋名單） <span class="tag-pill tag-yellow">留白自由選</span></h3>
+                        <p class="item-desc">今晚保留彈性！回飯店卸貨稍作休息，周邊春吉、渡邊通與藥院徒步 5–12 分鐘內自由挑選想吃的美食。</p>
                     </div>
                 </div>
             </div>
-            <div class="food-section">
-                <div class="food-title">🍽️ Day 4 美食清單</div>
-                <div class="food-grid">
-                    <div class="meal-card">
-                        <div class="meal-type">早晨跑後茶點</div>
-                        <div class="meal-name">&LOCALS 大濠公園 ｜ 湖畔星巴克</div>
-                        <div class="meal-info">現泡八女茶佐手作高湯厚玉子燒；星巴克露天座觀湖。</div>
+            <div class="food-tray">
+                <div class="tray-title">🍽️ DAY 4 晚餐口袋名單（自由挑選皆 ≥ 4.4★）</div>
+                <div class="food-cards-grid">
+                    <div class="f-card">
+                        <div class="f-type">海鮮爐端燒 ★4.5</div>
+                        <div class="f-name">炉端ノいとおかし（春吉）</div>
+                        <div class="f-info">長濱市場直送極鮮魚料、吧台炭火烤魚、稻草燒鰹魚與海鮮土鍋飯。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">午餐首選</div>
-                        <div class="meal-name">Caffee Espresso 現炒義大利麵</div>
-                        <div class="meal-info">道地香蒜海鮮/生義大利麵佐香醇濃縮咖啡（若選近郊則品嚐當地海景咖啡或柳川蒸鰻魚飯）。</div>
+                    <div class="f-card">
+                        <div class="f-type">炭火地雞燒鳥 ★4.4</div>
+                        <div class="f-name">燒鳥 鳥次 (Chouji) ｜ かわ屋</div>
+                        <div class="f-info">福岡代表性炙烤雞皮串與炭火地雞串燒，外酥內嫩蘸柚子胡椒。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">晚餐精選推薦 ①（海鮮爐端燒 ★4.5）</div>
-                        <div class="meal-name">炉端ノいとおかし（春吉）</div>
-                        <div class="meal-info">長濱魚市場直送極鮮魚料、吧台炭火現烤鮮魚、稻草燒炙烤鰹魚與海鮮土鍋飯。</div>
-                    </div>
-                    <div class="meal-card">
-                        <div class="meal-type">晚餐精選推薦 ②（人氣炭火燒鳥 ★4.4）</div>
-                        <div class="meal-name">燒鳥 弁慶 / 鳥次 (Chouji) / かわ屋</div>
-                        <div class="meal-info">品嚐福岡代表性「博多烤雞皮串」與炭火地雞串燒，外酥內嫩蘸柚子胡椒超開胃！</div>
-                    </div>
-                    <div class="meal-card">
-                        <div class="meal-type">晚餐精選推薦 ③（藥院在地手作居酒屋 ★4.4）</div>
-                        <div class="meal-name">白金台所 / 魚男 (FISHMAN) / 喜水亭</div>
-                        <div class="meal-info">飯店旁白金與藥院巷弄精緻日式割烹居酒屋，極鮮刺身拼盤、時令蔬菜天婦羅與九州地酒。</div>
-                    </div>
-                    <div class="meal-card">
-                        <div class="meal-type">晚餐精選推薦 ④（博多名物牛腸鍋 ★4.4）</div>
-                        <div class="meal-name">博多もつ鍋 おおいし (Oishi) 住吉店</div>
-                        <div class="meal-info">地道醇厚味噌牛腸鍋，滿滿和牛小腸甘甜爆汁，最後加入強棒麵（ちゃんぽん）收尾極滿足。</div>
+                    <div class="f-card">
+                        <div class="f-type">藥院手作割烹居酒屋 ★4.4</div>
+                        <div class="f-name">白金台所 ｜ 博多 炉端 魚男 (FISHMAN)</div>
+                        <div class="f-info">飯店旁白金巷弄質感居酒屋，極鮮刺身拼盤、時令蔬菜天婦羅。</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ================= DAY 5 ================= -->
-        <div class="day-card" id="day5">
-            <div class="day-header">
-                <div><span class="day-badge">DAY 5</span> <span class="day-date">9/26 (六)</span></div>
-                <span class="day-theme">睡飽退房 ➔ 六本松酸種麵包・COFFEE COUNTY・BIOTOP ➔ 16:00和牛燒肉 ➔ 機場</span>
+        <div class="day-schedule-card" id="d5">
+            <div class="schedule-header">
+                <div class="date-title">
+                    <span class="badge-day">DAY 5</span>
+                    <span>9/26 (六)</span>
+                </div>
+                <span class="theme-pill">六本松 ➔ 16:00燒肉 ➔ 機場返台</span>
             </div>
-            <div class="timeline">
-                <div class="time-block">
-                    <div class="time-label">09:30 - 10:45</div>
-                    <div class="time-content">
-                        <h3>睡飽飽自然醒 ➔ 整理行李退房寄放櫃台 <span class="tag tag-trans">退房整裝</span></h3>
-                        <p class="time-desc">悠閒睡飽自然醒，戰利品整齊裝箱封箱！10:30 前往 YADO/Re 櫃台退房並寄放大行李，一身輕裝出門！</p>
+            <div class="timeline-box">
+                <div class="item-row">
+                    <div class="time-badge">09:30-10:45</div>
+                    <div class="item-main">
+                        <h3>睡飽飽自然醒 ➔ 整理行李退房寄放大廳 <span class="tag-pill tag-blue">從容整裝</span></h3>
+                        <p class="item-desc">不設鬧鐘睡到自然醒！戰利品裝箱封箱，10:30 櫃台退房並寄放行李，一身輕便展開文青散策。</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">11:00 - 15:30</div>
-                    <div class="time-content">
-                        <h3>六本松酸種麵包 ➔ COFFEE COUNTY ➔ 赤坂 BIOTOP 慢活巡禮 <span class="tag tag-bakery">酸種烘焙</span> <span class="tag tag-food">精品咖啡</span> <span class="tag tag-shop">選物地標</span></h3>
-                        <div class="trans-guide"><strong>🚇 交通方式：</strong>藥院站搭七隈線（3 站、5 分鐘）直達「六本松站」；回程散步或搭公車漫步赤坂與高砂、白金。</div>
-                        <p class="time-desc">
-                            1. <strong>六本松酸種麵包尋味（osai / Ropponmatsu Sourdough）</strong>：造訪六本松著名的職人酸種烘焙（Sourdough）與歐風麵包坊（如 Ropponmatsu 人氣排隊名店 Amam Dacotah、マツパン），品嚐天然酵母外脆內韌的迷人麥香！<br>
-                            2. <strong>COFFEE COUNTY（中央區高砂店 / stock 西中洲）</strong>：福岡神級自烘精品咖啡！高砂門市就在 YADO/Re 飯店旁徒步 7–8 分鐘，必點極富花果香氣的手沖單品與特調拿鐵！<br>
-                            3. <strong>BIOTOP (ビオトープ) FUKUOKA（赤坂）</strong>：綠意植栽、國際獨立設計師服飾、小眾質感香氛美妝複合空間，美感滿分！<br>
-                            4. <strong>六本松蔦屋書店 & 藥院生活雜貨</strong>：逛日本生活美學雜誌、文創雜貨，享受最愜意的午後。
+                <div class="item-row">
+                    <div class="time-badge">11:00-15:30</div>
+                    <div class="item-main">
+                        <h3>六本松酸種麵包 ➔ COFFEE COUNTY ➔ 赤坂 BIOTOP <span class="tag-pill tag-purple">質感慢活</span></h3>
+                        <p class="item-desc">
+                            1. <strong>六本松酸種麵包（Amam Dacotah 4.4★ / マツパン 4.4★）</strong>：七隈線 5 分直達六本松，造訪職人歐風烘焙與酸種麵包（Sourdough），逛最美六本松蔦屋書店！<br>
+                            2. <strong>COFFEE COUNTY Fukuoka（高砂店 4.5★）</strong>：神級自烘淺焙咖啡！就在 YADO/Re 飯店旁徒步 8 分鐘，極富花果香氣手沖天花板。<br>
+                            3. <strong>BIOTOP (ビオトープ) FUKUOKA</strong>：赤坂綠意植栽、獨立設計師服飾與小眾香氛美妝複合地標。
                         </p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">16:00 - 17:45</div>
-                    <div class="time-content">
-                        <h3>✨ 壓軸登場！藥院頂級黑毛和牛燒肉盛宴（16:00 已訂位） <span class="tag tag-food">已訂位</span></h3>
-                        <div class="trans-guide"><strong>🚶 交通方式：</strong>自藥院街區步行 3–5 分鐘即達燒肉店，走路就到！</div>
-                        <p class="time-desc">避開晚間尖峰客滿人潮，16:00 悠閒入座享用極上九州黑毛和牛（推薦：<strong>燒肉 喜十郎</strong> 高 CP 值佐賀牛 / <strong>燒肉 すどう</strong> 專人桌邊代烤百名店）！厚切牛舌與霜降和牛在炭火上滋滋作響！</p>
+                <div class="item-row">
+                    <div class="time-badge">16:00-17:45</div>
+                    <div class="item-main">
+                        <h3>✨ 壓軸登場！藥院頂級和牛燒肉盛宴（16:00 已訂位） <span class="tag-pill tag-orange">已訂位</span></h3>
+                        <p class="item-desc">避開晚間尖峰，16:00 悠閒入座享用極上九州黑毛和牛！炭火慢烤厚切牛舌與特上霜降和牛，大口吃肉完美犒賞！</p>
                     </div>
                 </div>
-                <div class="time-block">
-                    <div class="time-label">18:00 - 21:00</div>
-                    <div class="time-content">
-                        <h3>回飯店提行李 ➔ 全程地鐵直達福岡機場 ➔ 報到返台 <span class="tag tag-trans">地鐵直達</span></h3>
-                        <div class="trans-guide">
-                            <strong>🚇 終極順暢地鐵路線（時間精準、完全不塞車）：</strong><br>
-                            1. 燒肉結束步行 3 分鐘回 YADO/Re 飯店領取行李。<br>
-                            2. 步行 4 分鐘至<strong>「藥院站」搭乘地鐵七隈線（2 站、4 分鐘）直達「博多站」</strong>。<br>
-                            3. 博多站內無縫轉乘<strong>空港線（2 站、5 分鐘）直達「福岡機場站」</strong>。<br>
-                            4. 國內線出站搭乘免費航廈接駁公車（15 分鐘）直達<strong>「國際線航廈」</strong>！
-                        </div>
-                        <p class="time-desc">約 18:50 抵達國際線航廈辦理報到托運，搭乘 21:00 華航 CI111 班機平安返抵台灣！</p>
+                <div class="item-row">
+                    <div class="time-badge">18:00-21:00</div>
+                    <div class="item-main">
+                        <h3>回飯店提行李 ➔ 全程地鐵直達機場 ➔ 返抵台灣 <span class="tag-pill tag-green">不塞車</span></h3>
+                        <div class="trans-memo"><strong>🚇 順暢返程：</strong>17:45 飯店拿行李 ➔ 藥院搭七隈線 4 分到博多 ➔ 轉空港線 5 分到機場國內線 ➔ 免費接駁車至國際線。</div>
+                        <p class="item-desc">約 18:50 抵達國際線辦理華航報到托運，搭乘 21:00 華航 CI111 班機平安返台！</p>
                     </div>
                 </div>
             </div>
-            <div class="food-section">
-                <div class="food-title">🍽️ Day 5 美食與咖啡重點</div>
-                <div class="food-grid">
-                    <div class="meal-card">
-                        <div class="meal-type">烘焙首選</div>
-                        <div class="meal-name">六本松 osai 酸種麵包 ｜ Amam Dacotah</div>
-                        <div class="meal-info">天然酵母慢發酵歐風硬法與酸種麵包（Sourdough），麥香層次豐富。</div>
+            <div class="food-tray">
+                <div class="tray-title">🍽️ DAY 5 烘焙、咖啡與燒肉亮點</div>
+                <div class="food-cards-grid">
+                    <div class="f-card">
+                        <div class="f-type">酸種烘焙 ★4.4</div>
+                        <div class="f-name">Amam Dacotah 六本松本店 ｜ マツパン</div>
+                        <div class="f-info">天然酵母慢發酵歐風硬法與酸種麵包（Sourdough），麥香層次豐富。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">指名神級咖啡</div>
-                        <div class="meal-name">COFFEE COUNTY Fukuoka（高砂店）</div>
-                        <div class="meal-info">中央區高砂1-21-21（離飯店步行僅 8 分鐘）！淺焙花果香手沖單品天花板。</div>
+                    <div class="f-card">
+                        <div class="f-type">手沖精品咖啡 ★4.5</div>
+                        <div class="f-name">COFFEE COUNTY Fukuoka（高砂店）</div>
+                        <div class="f-info">中央區高砂 1-21-21（離飯店步行僅 8 分鐘）！淺焙花果香氣天花板。</div>
                     </div>
-                    <div class="meal-card">
-                        <div class="meal-type">和牛燒肉盛宴（✨ 16:00 已訂位）</div>
-                        <div class="meal-name">藥院和牛燒肉專門店（16:00 入座）</div>
-                        <div class="meal-info">已完成 16:00 訂位！炭火慢烤頂級九州黑毛和牛、特上霜降與極厚切牛舌，完美收官福岡行！</div>
+                    <div class="f-card">
+                        <div class="f-type">和牛燒肉盛宴（✨ 16:00 已訂位）</div>
+                        <div class="f-name">藥院和牛燒肉專門店（16:00 入座）</div>
+                        <div class="f-info">已完成 16:00 訂位！極厚切牛舌、特上和牛盛合炭烤多汁甘甜！</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= TENJIN SHOPPING & TAX REFUND GUIDE ================= -->
-        <div class="shopping-guide-card" id="tenjin-guide">
-            <h2>🛍️ 天神商圈百貨購物 ＆ 免稅退稅全指南 (TAX-FREE)</h2>
-            <div class="shopping-grid">
-                <div class="dept-box">
-                    <h4>ONE FUKUOKA BLDG. (ワンビル) <span>天神全新地標</span></h4>
-                    <p>
-                        • <strong>特色：</strong>福岡天神最新摩天巨型複合地標！B2 直通天神地下街，匯聚 126 間時髦生活風格選品、美妝保養、書店文創與人氣甜點。<br>
-                        • <strong>退稅方式：</strong>各進駐專櫃獨立結帳，凡標有「Tax-Free」店鋪單筆滿 5,000 円即可憑護照辦理免稅或至館內指定免稅櫃台辦理。
-                    </p>
+        <!-- ================= TENJIN TAX REFUND GUIDE ================= -->
+        <div class="info-card" id="tax-guide">
+            <div class="info-title">
+                <span>🛍️ 天神商圈百貨購物 ＆ 免稅退稅全指南 (TAX-FREE)</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>ONE FUKUOKA BLDG. (ワンビル) <span>天神全新摩天地標</span></h4>
+                    <p>B2 直通天神地下街，匯聚 126 間生活風格選物、書店與人氣甜點。標有「Tax-Free」專櫃單筆滿 5,000 円憑護照免稅。</p>
                 </div>
-                <div class="dept-box">
-                    <h4>mina 天神 (ミーナ天神) <span>九州最大平價神殿</span></h4>
-                    <p>
-                        • <strong>特色：</strong>樓高 8 層，集結<strong>全九州最大 UNIQLO（整層旗艦）、全九州最大 GU、超大型 LOFT 生活雜貨、3COINS+plus、松本清、JINS</strong>！<br>
-                        • <strong>退稅方式：</strong>各樓層名店（UNIQLO、GU、LOFT、ABC-MART 等）皆設有<strong>專屬 Tax-Free 免稅結帳櫃台</strong>，單店單筆滿 5,000 円（未稅）直接現場扣除 10% 消費稅結帳，免扣手續費！
-                    </p>
+                <div class="info-box">
+                    <h4>mina 天神 (ミーナ天神) <span>全九州最大平價神殿</span></h4>
+                    <p>全九州最大 UNIQLO、GU、LOFT 生活雜貨、3COINS+plus！各大主力店設有<strong>免稅專屬結帳櫃台</strong>，滿 5,000 円（未稅）直接免稅結帳，<strong>不扣手續費</strong>！</p>
                 </div>
-                <div class="dept-box">
-                    <h4>AEON SHOPPERS 福岡店 <span>mina隔壁連通大賣場</span></h4>
-                    <p>
-                        • <strong>特色：</strong>就在 mina 天神正隔壁，<strong>1 樓與 4 樓有室內連通道直接互通</strong>！擁有大型 MUJI 無印良品、大型 DAISO 大創與佔地 4 層的永旺 AEON 大超市。<br>
-                        • <strong>退稅方式：</strong>1F/B1 超市與生活用品設有專屬退稅服務台（Tax Refund Counter），化妝品/食品消耗品與一般用品滿 5,000 円可退稅。超市生鮮營業至 22:00！
-                    </p>
+                <div class="info-box">
+                    <h4>AEON SHOPPERS 福岡店 <span>mina 隔壁連通大賣場</span></h4>
+                    <p>mina 天神 1F/4F 連通道直接互通！擁有大型 MUJI 無印良品、大型 DAISO 大創與 4 層樓永旺 AEON 超市。超市營業至 22:00，設退稅服務台。</p>
                 </div>
-                <div class="dept-box">
+                <div class="info-box">
                     <h4>岩田屋本店 (IWATAYA) <span>頂級美妝與新館 3F</span></h4>
-                    <p>
-                        • <strong>特色：</strong>全九州美妝霸主（HR 黑繃帶、肌膚之鑰、Chanel 等）與<strong>新館 3F 國際當代設計師選品</strong>。<br>
-                        • <strong>優惠與退稅：</strong>先至新館 1F 諮詢台出示外國護照領取 <strong>5% 折扣券（Guest Coupon）</strong>！集中採買後至<strong>新館 7F 退稅中心</strong>辦理退稅（扣 1.55% 手續費）。
-                    </p>
+                    <p>全九州美妝霸主（HR 黑繃帶、肌膚之鑰等）與新館 3F 設計師選品！新館 1F 先領 <strong>5% 折扣券</strong>，採買後至新館 7F 退稅中心退稅。</p>
                 </div>
-                <div class="dept-box">
-                    <h4>福岡 PARCO (本館/新館) <span>潮流次文化生活</span></h4>
-                    <p>
-                        • <strong>特色：</strong>地下街直通，BEAMS、Journal Standard、吉卜力橡子共和國、人氣動漫雜貨，B2 為人氣沾麵「麵屋兼虎」。<br>
-                        • <strong>退稅方式：</strong>個別專櫃結帳後，持當日發票與護照至<strong>本館 1F 免稅服務櫃台</strong>統一辦理退稅手續。
-                    </p>
-                </div>
-                <div class="dept-box">
+                <div class="info-box">
                     <h4>大名選品店：CABaN <span>日系頂級極簡針織</span></h4>
-                    <p>
-                        • <strong>特色：</strong>位於大名 1 丁目（岩田屋步行 3 分鐘），日系極致色彩與高質感頂級羊絨開襟衫，男女裝版型絕佳。<br>
-                        • <strong>退稅方式：</strong>店內結帳時直接出示護照，消費滿 5,000 円直接免稅結帳。
-                    </p>
+                    <p>大名 1 丁目（岩田屋步行 3 分鐘），日系極致色彩與高質感頂級羊絨開襟衫。結帳出示護照滿 5,000 円直接免稅。</p>
                 </div>
             </div>
         </div>
 
         <!-- ================= SUPERMARKET GUIDE ================= -->
-        <div class="shopping-guide-card" id="supermarket">
-            <h2>🛒 福岡晚間超市大採買指南（四大超市特色與距離比對）</h2>
-            <div class="shopping-grid">
-                <div class="dept-box">
+        <div class="info-card" id="super-guide">
+            <div class="info-title">
+                <span>🛒 福岡晚間超市大採買指南（四大超市特色）</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-box">
                     <h4>① 業務スーパー 清川店 <span>批發大包裝・超便宜</span></h4>
-                    <p>
-                        • <strong>距離飯店：</strong>步行約 <strong>8–10 分鐘（約 750 公尺）</strong>。<br>
-                        • <strong>營業時間：</strong>09:00–21:00。<br>
-                        • <strong>必買推薦：</strong>大包裝日式零食仙貝、日式胡麻醬/燒肉醬、大容量茶包與日式調味料、冷凍食品，價格是一般超商的半價！
-                    </p>
+                    <p><strong>步行 8–10 分鐘（約 750m）</strong>｜ 營業至 21:00。日式零食仙貝、胡麻醬/燒肉醬、大茶包調味料，價格是一般超商半價！</p>
                 </div>
-                <div class="dept-box">
+                <div class="info-box">
                     <h4>② サニー (Sunny) 渡邊通店 <span>24 小時營業・生鮮水果宵夜</span></h4>
-                    <p>
-                        • <strong>距離飯店：</strong>步行僅 <strong>5 分鐘（約 400 公尺）</strong>！<br>
-                        • <strong>營業時間：</strong><strong>24 小時全天無休</strong>。<br>
-                        • <strong>必買推薦：</strong>當季新鮮水果（麝香葡萄、草莓、水蜜桃）、日本十勝鮮乳、特濃優格、日清泡麵、夜間熟食炸物半價出清！
-                    </p>
+                    <p><strong>步行僅 5 分鐘（約 400m）</strong>｜ <strong>24 小時無休</strong>。當季水果（麝香葡萄、水蜜桃）、十勝鮮乳、特濃優格、日清泡麵宵夜首選！</p>
                 </div>
-                <div class="dept-box">
-                    <h4>③ レガネット (Reganet) 藥院店 <span>車站共構・質感超市</span></h4>
-                    <p>
-                        • <strong>距離飯店：</strong>步行 <strong>4 分鐘</strong>（西鐵藥院站 1F 共構）。<br>
-                        • <strong>營業時間：</strong>08:00–23:00。<br>
-                        • <strong>必買推薦：</strong>下電車回飯店順路買！精緻手作便當、當日生魚片握壽司切盤、精選九州在地地酒、甜點。
-                    </p>
+                <div class="info-box">
+                    <h4>③ レガネット (Reganet) 藥院店 <span>車站共構・熟食便當</span></h4>
+                    <p><strong>步行 4 分鐘</strong>（西鐵藥院站 1F）｜ 營業至 23:00。下車回飯店順路買！精緻便當、生魚片握壽司切盤、地酒甜點。</p>
                 </div>
-                <div class="dept-box">
+                <div class="info-box">
                     <h4>④ LOPIA (ロピア) 博多 Yodobashi 店 <span>日本爆紅好市多</span></h4>
-                    <p>
-                        • <strong>位置：</strong>博多車站筑紫口 Yodobashi 4 樓（Day 3 晚上吃完飯可順路採買！）。<br>
-                        • <strong>營業時間：</strong>10:00–20:00。<br>
-                        • <strong>必買推薦：</strong>「肉的生鮮超市」美譽！超厚和牛、巨無霸握壽司便當、超平價時令水果盒、特色零食披薩，人氣破表！
-                    </p>
+                    <p>博多站筑紫口 Yodobashi 4F（Day 3 晚餐後順逛）｜ 營業至 20:00。「肉的生鮮超市」，巨無霸握壽司、超平價水果盒！</p>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>♡ 祝 Leo & Tina 有一趟順暢、美味、買爆又愜意的福岡專屬假期 ♡</p>
+            <p>♡ LEO & TINA FUKUOKA TRIP 2026 ♡<br>祝你們有一趟順暢、美味、買爆又愜意的專屬假期！</p>
         </footer>
+
     </div>
+
+    <!-- Back to top floating button -->
+    <a href="#" class="fab-btn">↑</a>
+
+    <!-- Interactive Currency Converter Script -->
+    <script>
+        let currentRate = 0.21;
+
+        function updateRate() {
+            const r = parseFloat(document.getElementById('customRate').value);
+            if (!isNaN(r) && r > 0) {
+                currentRate = r;
+            }
+        }
+
+        function calculateFromRateChange() {
+            updateRate();
+            convertJPYtoTWD();
+        }
+
+        function convertJPYtoTWD() {
+            updateRate();
+            const jpy = parseFloat(document.getElementById('inputJPY').value);
+            if (!isNaN(jpy)) {
+                document.getElementById('inputTWD').value = Math.round(jpy * currentRate);
+            } else {
+                document.getElementById('inputTWD').value = '';
+            }
+        }
+
+        function convertTWDtoJPY() {
+            updateRate();
+            const twd = parseFloat(document.getElementById('inputTWD').value);
+            if (!isNaN(twd) && currentRate > 0) {
+                document.getElementById('inputJPY').value = Math.round(twd / currentRate);
+            } else {
+                document.getElementById('inputJPY').value = '';
+            }
+        }
+
+        function quickSetJPY(val) {
+            document.getElementById('inputJPY').value = val;
+            convertJPYtoTWD();
+        }
+
+        function toggleCurrencyFocus() {
+            const jpyEl = document.getElementById('inputJPY');
+            const twdEl = document.getElementById('inputTWD');
+            if (document.activeElement === jpyEl) {
+                twdEl.focus();
+            } else {
+                jpyEl.focus();
+            }
+        }
+    </script>
 </body>
 </html>
