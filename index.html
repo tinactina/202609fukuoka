@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LEO & TINA IN FUKUOKA ♡ 福岡旅手帳</title>
+    <title>レオ & ナナ IN FUKUOKA ❋</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -869,6 +869,50 @@
             transform: scale(0.92);
         }
 
+    
+        /* Google Maps Interactive Pin & Link Buttons */
+        .gmap-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #FFFFFF;
+            border: 1.2px solid var(--border-line);
+            border-radius: var(--radius-pill);
+            padding: 3px 9px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #1A73E8;
+            text-decoration: none;
+            box-shadow: 1px 2px 0px rgba(61, 80, 100, 0.15);
+            margin-top: 5px;
+            transition: all 0.15s;
+        }
+        .gmap-pill:active {
+            transform: scale(0.95);
+            background: #E8F0FE;
+        }
+        .area-map-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #EFF6FF;
+            border: 1.5px solid #3B82F6;
+            border-radius: 14px;
+            padding: 8px 12px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #1D4ED8;
+            text-decoration: none;
+            margin-top: 10px;
+            box-shadow: 2px 3px 0px rgba(59, 130, 246, 0.2);
+            transition: all 0.15s;
+        }
+        .area-map-btn:active {
+            transform: scale(0.96);
+            background: #DBEAFE;
+        }
+
     </style>
 </head>
 <body>
@@ -876,7 +920,7 @@
     <!-- Top Shizuoka Style Nav Bar -->
     <div class="top-nav">
         <div>
-            <div class="site-title">LEO & TINA</div>
+            <div class="site-title">レオ & ナナ IN FUKUOKA ❋</div>
             <div class="site-sub">FUKUOKA TRIP 2026 ・ 福岡を旅する</div>
         </div>
         <div class="top-pills">
@@ -968,51 +1012,54 @@
                 <span class="meta-pill">🚇 全程地下鐵・西鐵順遊</span>
             </div>
         </div>
-        <!-- Mobile-Friendly 5-Day Weather & Outfit Card -->
-        <div class="weather-5day-card">
+        <!-- Mobile-Friendly 5-Day Weather & Outfit Card (Connected to Live Open-Meteo API) -->
+        <div class="weather-5day-card" id="weather-card">
             <div class="w-header">
-                <div class="w-title">
-                    <span>⛅ 福岡 5 日氣候與穿搭手帳</span>
+                <div>
+                    <div class="w-title">
+                        <span>⛅ 福岡即時氣候 ＆ 動態穿搭手帳</span>
+                    </div>
+                    <div class="rate-status" id="weatherStatus"><span class="live-pulse"></span>即時氣象連線中...</div>
                 </div>
-                <span class="w-badge">9/22 - 9/26</span>
+                <span class="w-badge" id="weatherBadge">LIVE 預報</span>
             </div>
-            <div class="w-scroll-grid">
+            <div class="w-scroll-grid" id="weatherGrid">
+                <!-- Will be dynamically populated by API, with graceful autumn fallback -->
                 <div class="w-day-box">
-                    <div class="w-d-name">D1 (二)</div>
+                    <div class="w-d-name">D1 9/22</div>
                     <div class="w-icon">☀️</div>
                     <div class="w-temp">26° / 19°</div>
-                    <span class="w-tag">晴朗市區</span>
+                    <span class="w-tag">晴朗</span>
                 </div>
                 <div class="w-day-box">
-                    <div class="w-d-name">D2 (三)</div>
+                    <div class="w-d-name">D2 9/23</div>
                     <div class="w-icon">⛅</div>
                     <div class="w-temp">27° / 20°</div>
-                    <span class="w-tag">海風舒適</span>
+                    <span class="w-tag">多雲舒適</span>
                 </div>
                 <div class="w-day-box">
-                    <div class="w-d-name">D3 (四)</div>
+                    <div class="w-d-name">D3 9/24</div>
                     <div class="w-icon">🌦️</div>
                     <div class="w-temp">23° / 16°</div>
-                    <span class="w-tag">山區微涼</span>
+                    <span class="w-tag">由布院山區</span>
                 </div>
                 <div class="w-day-box">
-                    <div class="w-d-name">D4 (五)</div>
+                    <div class="w-d-name">D4 9/25</div>
                     <div class="w-icon">☀️</div>
                     <div class="w-temp">27° / 20°</div>
                     <span class="w-tag">晨跑晴朗</span>
                 </div>
                 <div class="w-day-box">
-                    <div class="w-d-name">D5 (六)</div>
+                    <div class="w-d-name">D5 9/26</div>
                     <div class="w-icon">⛅</div>
                     <div class="w-temp">26° / 19°</div>
-                    <span class="w-tag">涼爽微風</span>
+                    <span class="w-tag">市區微風</span>
                 </div>
             </div>
-            <div class="w-outfit-memo">
-                🍂 <strong>穿搭靈感：</strong>福岡初秋舒適，白天穿短袖即可；<strong>Day 3 由布院山區早晚溫差較大</strong>，請隨身備一件透氣薄長袖或罩衫防風！
+            <div class="w-outfit-memo" id="outfitMemo">
+                🍂 <strong>即時穿搭叮嚀：</strong>讀取即時天氣中...（福岡秋季體感舒適，白天以透氣短袖為主；若遇早晚溫差或 Day 3 前往由布院山區，建議準備薄罩衫或防風外套！）
             </div>
         </div>
-
 
         <!-- =================================================== -->
         <!-- LIVE CURRENCY CONVERTER (台幣 / 日幣 即時換算小工具) -->
@@ -1069,11 +1116,11 @@
         <div class="sticky-nav-container">
             <div class="day-nav-scroll">
                 <a href="#d1" class="day-nav-pill active" data-target="d1">D1 抵達・天神</a>
-                <a href="#d2" class="day-nav-pill" data-target="d2">D2 宮地嶽・櫛田</a>
+                <a href="#d2" class="day-nav-pill" data-target="d2">D2 宮地嶽・中州・博多運河城</a>
                 <a href="#d3" class="day-nav-pill" data-target="d3">D3 大分一日遊</a>
-                <a href="#d4" class="day-nav-pill" data-target="d4">D4 晨跑・LaLaport</a>
-                <a href="#d5" class="day-nav-pill" data-target="d5">D5 麵包・16:00燒肉</a>
-                <a href="#tax-guide" class="day-nav-pill" data-target="tax-guide">🛍️ 百貨退稅</a>
+                <a href="#d4" class="day-nav-pill" data-target="d4">D4 大濠公園・太宰府・LaLaport</a>
+                <a href="#d5" class="day-nav-pill" data-target="d5">D5 六本松、藥院・燒肉日</a>
+                <a href="#tax-guide" class="day-nav-pill" data-target="tax-guide">百貨退稅</a>
                 <a href="#super-guide" class="day-nav-pill" data-target="super-guide">🛒 超市指南</a>
             </div>
         </div>
@@ -1108,7 +1155,7 @@
                         <h3>天神核心逛街線！單向順遊不走回頭路 <span class="tag-pill tag-purple">選品採買</span></h3>
                         <p class="item-desc">
                             1. <strong>岩田屋本店（IWATAYA）</strong>：新館 1F 憑護照領 5% 券，採買專櫃美妝與保養；直上 <strong>新館 3 樓</strong> 探索頂級設計師與國際當代選品服飾，7F 退稅！<br>
-                            2. <strong>CABaN 福岡店（大名 1 丁目）</strong>：自岩田屋步行 3 分即達！日系頂級羊絨針織與都會極簡剪裁必逛！<br>
+                            2. <strong>CABaN 福岡店（大名 1 丁目）</strong>：自岩田屋步行 3 分即達！<br>
                             3. <strong>ONE FUKUOKA BLDG.（天神全新摩天地標）</strong>：地下街直通，匯聚 126 間生活風格選物、蔦屋書店與咖啡。<br>
                             4. <strong>mina 天神 ＆ 連通 AEON SHOPPERS 福岡</strong>：地下街一路往北直達！擁有全九州最大 UNIQLO、GU、LOFT，1F/4F 連通隔壁 AEON 大超市與 MUJI 無印良品！
                         </p>
@@ -1130,16 +1177,6 @@
                         <div class="f-name">麵屋兼虎（PARCO 4.3★） ｜ 挽肉と米（今泉店 4.4★）</div>
                         <div class="f-info">辛辛沾麵與肉盛沾麵必點；挽肉と米炭火現烤純牛漢堡排配羽釜炊飯。</div>
                     </div>
-                    <div class="f-card">
-                        <div class="f-type">下午茶 ★4.2 ~ 4.3</div>
-                        <div class="f-name">HARBS 水果千層（PARCO 4.2★） ｜ Manu Coffee（大名 4.3★）</div>
-                        <div class="f-info">PARCO 新館 2F HARBS 招牌千層；大名潮流手沖精品咖啡。</div>
-                    </div>
-                    <div class="f-card">
-                        <div class="f-type">晚餐屋台 ★4.3</div>
-                        <div class="f-name">屋台ぴょん吉（中洲 4.3★） ｜ 祇園鉄なべ（4.2★）</div>
-                        <div class="f-info">金黃鐵鍋煎餃、烤雞皮串燒蘸柚子胡椒，體驗福岡在地夜生活。</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1157,8 +1194,8 @@
                 <div class="item-row">
                     <div class="time-badge">08:40-12:30</div>
                     <div class="item-main">
-                        <h3>博多站買可頌 ➔ 宮地嶽神社（光之道海景） <span class="tag-pill tag-blue">近郊</span></h3>
-                        <div class="snack-memo">🥐 <strong>il FORNO del MIGNON（4.4★）：</strong>博多站 JR 中央口對面秒買熱騰騰迷你可頌帶上車！</div>
+                        <h3> 宮地嶽神社（光之道海景） <span class="tag-pill tag-blue">近郊</span></h3>
+                        <div class="snack-memo">🥐 <strong>il FORNO del MIGNON（4.4★）：</strong>博多站 JR 中央口對面秒買熱騰騰迷你可頌、butter 帶上車！</div>
                         <p class="item-desc">博多站搭 JR 快速（25 分鐘）直達福間站，轉巴士 5 分鐘抵達。早晨順光參拜 3 噸巨大注連繩，石階頂端俯瞰一路筆直通往大海的大道！參道吃現烤松枝餅。</p>
                     </div>
                 </div>
@@ -1179,24 +1216,36 @@
                 </div>
             </div>
             <div class="food-tray">
-                <div class="tray-title">🍽️ DAY 2 晚餐推薦（祇園周邊皆 ≥ 4.2★）</div>
+                <div class="tray-title">📍 DAY 2 晚餐地圖推薦（祇園 / 運河城周邊）</div>
                 <div class="food-cards-grid">
                     <div class="f-card">
-                        <div class="f-type">鐵鍋煎餃 ★4.2（米其林必比登）</div>
+                        <div class="f-type">酥脆鐵鍋煎餃 ★4.2（米其林必比登）</div>
                         <div class="f-name">祇園鉄なべ（祇園站徒步 3 分）</div>
                         <div class="f-info">金黃焦脆鐵鍋一口餃，沾辣油柚子胡椒超過癮！</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=祇園鉄なべ" target="_blank" class="gmap-pill">📍 祇園鉄なべ 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">水炊雞肉鍋 ★4.4（祇園本店）</div>
                         <div class="f-name">博多水炊き とり田（櫛田神社旁）</div>
                         <div class="f-info">九州銘柄雞熬煮金黃濃郁雞白湯，高雅清甜無腥味。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=博多水炊き+とり田+博多本店" target="_blank" class="gmap-pill">📍 とり田 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">味噌牛腸鍋 ★4.6（超高分好評）</div>
-                        <div class="f-name">博多もつ鍋 前田屋（運河城店 / 總本店）</div>
+                        <div class="f-name">博多もつ鍋 前田屋（キャナルシティ博多前店）</div>
                         <div class="f-info">和牛牛腸肥嫩甘甜，濃郁白味噌湯底，必點胡麻鯖魚。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=博多もつ鍋+前田屋+キャナルシティ博多前店" target="_blank" class="gmap-pill">📍 前田屋 地圖導航</a>
+                    </div>
+                    <div class="f-card">
+                        <div class="f-type">茶壺胚芽烏龍麵 ★4.3</div>
+                        <div class="f-name">博多あかちょこべ（櫛田神社正對面）</div>
+                        <div class="f-info">茶壺水釜揚烏龍與元祖黑豬肉乾咖哩麵，麵條極Q彈。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=博多あかちょこべ" target="_blank" class="gmap-pill">📍 あかちょこべ 地圖導航</a>
                     </div>
                 </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=キャナルシティ博多+祇園+グルメ" target="_blank" class="area-map-btn">
+                    🗺️ 打開 Google Maps 探索運河城／祇園周邊全部美食
+                </a>
             </div>
         </div>
 
@@ -1240,24 +1289,36 @@
                 </div>
             </div>
             <div class="food-tray">
-                <div class="tray-title">🍽️ DAY 3 晚餐推薦（博多站內直達皆 ≥ 4.2★）</div>
+                <div class="tray-title">📍 DAY 3 晚餐地圖推薦（博多站出站即達）</div>
                 <div class="food-cards-grid">
                     <div class="f-card">
                         <div class="f-type">呼子活透抽生魚片 ★4.3</div>
                         <div class="f-name">博多 魚蔵（筑紫口 都酒店 2F）</div>
                         <div class="f-info">大巴下車走路 1 分鐘！晶瑩透亮活烏賊二吃（刺身脆甜＋炸天婦羅）。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=博多+魚蔵+都ホテル" target="_blank" class="gmap-pill">📍 博多 魚蔵 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">頂級明太子土鍋飯 ★4.4</div>
                         <div class="f-name">椒房庵（JR 博多城 9F 空天）</div>
                         <div class="f-info">茅乃舍旗下名店！專用土鍋炊煮羽釜飯，搭配極上明太子。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=ごはん家+椒房庵+JR博多シティ" target="_blank" class="gmap-pill">📍 椒房庵 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">仙台厚切炭烤牛舌 ★4.2</div>
                         <div class="f-name">仙臺牛舌 炭燒利久（JR 博多城 9F）</div>
                         <div class="f-info">炭香撲鼻多汁厚切牛舌定食，附牛尾清湯與燕麥飯。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=牛たん炭焼+利久+JR博多シティ店" target="_blank" class="gmap-pill">📍 利久牛舌 地圖導航</a>
+                    </div>
+                    <div class="f-card">
+                        <div class="f-type">排隊現炸天婦羅 ★4.4</div>
+                        <div class="f-name">天ぷらのひらお（博多站南店）</div>
+                        <div class="f-info">福岡庶民排隊天花板！現炸熱騰騰天婦羅配柚子醃漬明太子。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=天ぷらのひらお+博多" target="_blank" class="gmap-pill">📍 天婦羅平尾 地圖導航</a>
                     </div>
                 </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=JR博多シティ+くうてん+レストラン" target="_blank" class="area-map-btn">
+                    🗺️ 打開 Google Maps 查看 JR 博多城 9F/10F 空天全部餐廳
+                </a>
             </div>
         </div>
 
@@ -1301,24 +1362,42 @@
                 </div>
             </div>
             <div class="food-tray">
-                <div class="tray-title">🍽️ DAY 4 晚餐口袋名單（自由挑選皆 ≥ 4.4★）</div>
+                <div class="tray-title">📍 DAY 4 自由選晚餐地圖（飯店周邊徒步 5–12 分）</div>
                 <div class="food-cards-grid">
                     <div class="f-card">
-                        <div class="f-type">海鮮爐端燒 ★4.5</div>
+                        <div class="f-type">長濱直送海鮮爐端燒 ★4.5</div>
                         <div class="f-name">炉端ノいとおかし（春吉）</div>
                         <div class="f-info">長濱市場直送極鮮魚料、吧台炭火烤魚、稻草燒鰹魚與海鮮土鍋飯。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=炉端ノいとおかし" target="_blank" class="gmap-pill">📍 炉端ノいとおかし 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">炭火地雞燒鳥 ★4.4</div>
-                        <div class="f-name">燒鳥 鳥次 (Chouji) ｜ かわ屋</div>
+                        <div class="f-name">燒鳥 鳥次 (Chouji 春吉) ｜ かわ屋</div>
                         <div class="f-info">福岡代表性炙烤雞皮串與炭火地雞串燒，外酥內嫩蘸柚子胡椒。</div>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <a href="https://www.google.com/maps/search/?api=1&query=焼鳥+鳥次+福岡" target="_blank" class="gmap-pill">📍 燒鳥 鳥次 地圖</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=博多とりかわ+かわ屋+警固店" target="_blank" class="gmap-pill">📍 かわ屋 地圖</a>
+                        </div>
                     </div>
                     <div class="f-card">
-                        <div class="f-type">藥院手作割烹居酒屋 ★4.4</div>
+                        <div class="f-type">藥院/白金 手作割烹居酒屋 ★4.4</div>
                         <div class="f-name">白金台所 ｜ 博多 炉端 魚男 (FISHMAN)</div>
                         <div class="f-info">飯店旁白金巷弄質感居酒屋，極鮮刺身拼盤、時令蔬菜天婦羅。</div>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <a href="https://www.google.com/maps/search/?api=1&query=白金台所+福岡" target="_blank" class="gmap-pill">📍 白金台所 地圖</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=博多+炉端+魚男" target="_blank" class="gmap-pill">📍 魚男 地圖</a>
+                        </div>
+                    </div>
+                    <div class="f-card">
+                        <div class="f-type">地道醇厚牛腸鍋 ★4.4</div>
+                        <div class="f-name">博多もつ鍋 おおいし 住吉店</div>
+                        <div class="f-info">濃郁白味噌牛腸鍋，滿滿肥嫩牛小腸，加強棒麵收尾超滿足。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=博多もつ鍋+おおいし+住吉店" target="_blank" class="gmap-pill">📍 おおいし 地圖導航</a>
                     </div>
                 </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=春吉+薬院+グルメ+人気" target="_blank" class="area-map-btn">
+                    🗺️ 打開 Google Maps 探索春吉／藥院周邊全部美食
+                </a>
             </div>
         </div>
 
@@ -1367,24 +1446,39 @@
                 </div>
             </div>
             <div class="food-tray">
-                <div class="tray-title">🍽️ DAY 5 烘焙、咖啡與燒肉亮點</div>
+                <div class="tray-title">📍 DAY 5 烘焙、咖啡與燒肉地圖</div>
                 <div class="food-cards-grid">
                     <div class="f-card">
-                        <div class="f-type">酸種烘焙 ★4.4</div>
+                        <div class="f-type">六本松人氣酸種烘焙 ★4.4</div>
                         <div class="f-name">Amam Dacotah 六本松本店 ｜ マツパン</div>
                         <div class="f-info">天然酵母慢發酵歐風硬法與酸種麵包（Sourdough），麥香層次豐富。</div>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Amam+Dacotah+六本松" target="_blank" class="gmap-pill">📍 Amam Dacotah 地圖</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=マツパン+六本松" target="_blank" class="gmap-pill">📍 マツパン 地圖</a>
+                        </div>
                     </div>
                     <div class="f-card">
-                        <div class="f-type">手沖精品咖啡 ★4.5</div>
+                        <div class="f-type">神級自烘淺焙咖啡 ★4.5</div>
                         <div class="f-name">COFFEE COUNTY Fukuoka（高砂店）</div>
                         <div class="f-info">中央區高砂 1-21-21（離飯店步行僅 8 分鐘）！淺焙花果香氣天花板。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=COFFEE+COUNTY+Fukuoka" target="_blank" class="gmap-pill">📍 COFFEE COUNTY 地圖導航</a>
+                    </div>
+                    <div class="f-card">
+                        <div class="f-type">藥院手打讚岐烏龍麵 ★4.4</div>
+                        <div class="f-name">唄う稲穂（藥院文青老饕店）</div>
+                        <div class="f-info">藥院站旁手打現煮冷熱烏龍麵，清爽彈牙高湯鮮美。</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=唄う稲穂+薬院" target="_blank" class="gmap-pill">📍 唄う稲穂 地圖導航</a>
                     </div>
                     <div class="f-card">
                         <div class="f-type">和牛燒肉盛宴（✨ 16:00 已訂位）</div>
                         <div class="f-name">藥院和牛燒肉專門店（16:00 入座）</div>
                         <div class="f-info">已完成 16:00 訂位！極厚切牛舌、特上和牛盛合炭烤多汁甘甜！</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=薬院+焼肉" target="_blank" class="gmap-pill">📍 藥院燒肉周邊地圖</a>
                     </div>
                 </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=六本松+薬院+カフェ+ベーカリー" target="_blank" class="area-map-btn">
+                    🗺️ 打開 Google Maps 探索六本松／藥院周邊咖啡與甜點
+                </a>
             </div>
         </div>
 
@@ -1443,7 +1537,7 @@
         </div>
 
         <footer>
-            <p>♡ LEO & TINA FUKUOKA TRIP 2026 ♡<br>祝你們有一趟順暢、美味、買爆又愜意的專屬假期！</p>
+            <p>♡ レオ & ナナ FUKUOKA TRIP 2026 ♡<br>祝你們有一趟順暢、美味、買爆又愜意的專屬假期！</p>
         </footer>
 
     </div>
@@ -1455,14 +1549,16 @@
     <script>
         let currentRate = 0.208; // 預設安全備用匯率
 
-        // 1. 真實匯率 API 自動抓取
+        // ==========================================
+        // 1. 真實即時匯率 API (JPY ➔ TWD)
+        // ==========================================
         async function fetchLiveRate() {
             const statusEl = document.getElementById('rateStatus');
             const rateInput = document.getElementById('customRate');
             try {
-                // 免費高可用性 API
+                // 第一優先：Open Exchange Rates API (CORS 開放、即時且高可用)
                 const res = await fetch('https://open.er-api.com/v6/latest/JPY');
-                if (!res.ok) throw new Error('API request failed');
+                if (!res.ok) throw new Error('Primary rate API error');
                 const data = await res.json();
                 if (data && data.rates && data.rates.TWD) {
                     currentRate = parseFloat(data.rates.TWD);
@@ -1472,10 +1568,11 @@
                     return;
                 }
             } catch (err) {
-                console.warn('Primary rate API error, trying fallback...', err);
+                console.warn('Primary rate API fallback:', err);
             }
 
             try {
+                // 備用第二來源：ExchangeRate-API
                 const res2 = await fetch('https://api.exchangerate-api.com/v4/latest/JPY');
                 const data2 = await res2.json();
                 if (data2 && data2.rates && data2.rates.TWD) {
@@ -1537,7 +1634,106 @@
             }
         }
 
-        // 2. 回到頁首 (Back to Top) 懸浮按鈕平滑滾動
+        // ==========================================
+        // 2. 真實即時氣象 API ＆ 動態穿搭建議 (Open-Meteo)
+        // ==========================================
+        function getWeatherMeta(code) {
+            if (code === 0) return { icon: "☀️", desc: "晴朗" };
+            if (code === 1 || code === 2) return { icon: "🌤️", desc: "晴時多雲" };
+            if (code === 3) return { icon: "⛅", desc: "多雲" };
+            if (code === 45 || code === 48) return { icon: "🌫️", desc: "微霧" };
+            if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) return { icon: "🌧️", desc: "短暫雨" };
+            if ([71, 73, 75].includes(code)) return { icon: "❄️", desc: "有雪" };
+            if ([95, 96, 99].includes(code)) return { icon: "⛈️", desc: "雷雨" };
+            return { icon: "⛅", desc: "多雲" };
+        }
+
+        async function fetchLiveWeather() {
+            const weatherGrid = document.getElementById('weatherGrid');
+            const outfitMemo = document.getElementById('outfitMemo');
+            const weatherStatus = document.getElementById('weatherStatus');
+            const weatherBadge = document.getElementById('weatherBadge');
+            const heroTemp = document.querySelector('.capsule-temp');
+
+            // 福岡市中心經緯度 (33.5902, 130.4017)
+            const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=33.5902&longitude=130.4017&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo';
+
+            try {
+                const res = await fetch(apiUrl);
+                if (!res.ok) throw new Error('Weather API error');
+                const data = await res.json();
+                const daily = data.daily;
+
+                if (daily && daily.time && daily.time.length >= 5) {
+                    weatherStatus.innerHTML = `<span class="live-pulse"></span>已連線福岡即時氣象 API`;
+                    weatherBadge.textContent = 'LIVE 氣象';
+
+                    const daysLabel = ['D1', 'D2', 'D3', 'D4', 'D5'];
+                    let htmlBuilder = '';
+
+                    const todayMax = Math.round(daily.temperature_2m_max[0]);
+                    const todayMin = Math.round(daily.temperature_2m_min[0]);
+                    const todayCode = daily.weathercode[0];
+                    const todayRain = daily.precipitation_probability_max ? daily.precipitation_probability_max[0] : 0;
+                    const todayInfo = getWeatherMeta(todayCode);
+
+                    // 更新頂部卡片即時氣溫
+                    if (heroTemp) {
+                        heroTemp.innerHTML = `${todayMax}°C / ${todayMin}°C ${todayInfo.icon}`;
+                    }
+
+                    // 渲染 5 天即時天氣卡
+                    for (let i = 0; i < 5; i++) {
+                        const dateStr = daily.time[i]; // YYYY-MM-DD
+                        const parts = dateStr.split('-');
+                        const monthDay = `${parseInt(parts[1])}/${parseInt(parts[2])}`;
+                        const maxT = Math.round(daily.temperature_2m_max[i]);
+                        const minT = Math.round(daily.temperature_2m_min[i]);
+                        const wMeta = getWeatherMeta(daily.weathercode[i]);
+                        const rainProb = daily.precipitation_probability_max ? daily.precipitation_probability_max[i] : null;
+
+                        htmlBuilder += `
+                            <div class="w-day-box">
+                                <div class="w-d-name">${daysLabel[i]} ${monthDay}</div>
+                                <div class="w-icon">${wMeta.icon}</div>
+                                <div class="w-temp">${maxT}° / ${minT}°</div>
+                                <span class="w-tag">${wMeta.desc}${rainProb !== null && rainProb > 30 ? ` ☂️${rainProb}%` : ''}</span>
+                            </div>
+                        `;
+                    }
+                    weatherGrid.innerHTML = htmlBuilder;
+
+                    // 動態智慧穿搭演算法（根據當前實際溫差與天氣狀況即時計算）
+                    let outfitAdvice = '';
+                    if (todayMax >= 28) {
+                        outfitAdvice = '白天偏暖熱，建議著輕盈透氣短袖，可搭配墨鏡或遮陽帽；室內百貨冷氣偏強，備一件輕薄襯衫即可。';
+                    } else if (todayMax >= 22) {
+                        outfitAdvice = '體感舒適涼爽，建議以「透氣短袖 / 薄上衣」為基底，早晚溫差或傍晚海風較大時，搭配「針織薄開襟衫或薄罩衫」多層次穿搭最剛好！';
+                    } else {
+                        outfitAdvice = '天氣偏涼，建議穿著長袖、衛衣並外搭「防風外套或風衣」，注意保暖。';
+                    }
+
+                    if (todayMin <= 18) {
+                        outfitAdvice += '（早晚最低溫約 ' + todayMin + '°C，清晨跑步與夜間屋台偏涼，務必隨身攜帶防風外套）';
+                    }
+                    if (todayRain >= 40) {
+                        outfitAdvice += ' ⚠️ 今日降雨機率約 ' + todayRain + '%，出門記得隨身攜帶折疊傘！';
+                    }
+                    outfitAdvice += ' 🏔️ Day 3 前往由布院山區，海拔較高氣溫通常比市區低 3–4°C，請多備一件薄外套！';
+
+                    outfitMemo.innerHTML = `🍂 <strong>今日即時穿搭叮嚀（API 即時計算）：</strong>${outfitAdvice}`;
+                    return;
+                }
+            } catch (err) {
+                console.warn('Weather API fallback to historical default:', err);
+                weatherStatus.innerHTML = `⚠️ 離線秋季氣候參考`;
+                outfitMemo.innerHTML = `🍂 <strong>初秋穿搭叮嚀：</strong>福岡 9 月下旬初秋氣候舒爽（約 20°C–27°C），白天短袖即可；早晚微涼及 Day 3 由布院山區溫差大，請備一件輕薄長袖或防風罩衫！`;
+            }
+        }
+
+        // ==========================================
+        // 3. 回到頁首 (Back to Top) 懸浮按鈕平滑滾動
+        // ==========================================
         const fabBtn = document.querySelector('.fab-btn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 350) {
@@ -1552,7 +1748,9 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 3. 頂部吸頂天數導航 (Scrollspy Active Highlighting)
+        // ==========================================
+        // 4. 頂部吸頂天數導航 (Scrollspy Active Highlighting)
+        // ==========================================
         const navPills = document.querySelectorAll('.day-nav-pill');
         const trackedSections = Array.from(navPills).map(pill => {
             const targetId = pill.getAttribute('data-target');
@@ -1579,9 +1777,10 @@
             }
         });
 
-        // 頁面載入時抓取最新即時匯率
+        // 頁面載入時自動同時抓取即時匯率與即時氣象
         window.addEventListener('DOMContentLoaded', () => {
             fetchLiveRate();
+            fetchLiveWeather();
         });
     </script>
 </body>
