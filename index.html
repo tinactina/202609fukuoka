@@ -34,7 +34,7 @@
         }
 
         body {
-            font-family: 'Zen Maru Gothic', 'Outfit', 'Noto Sans TC', sans-serif;
+            font-family: 'Noto Sans TC', 'Zen Maru Gothic', 'Outfit', sans-serif;
             background: var(--sky-gradient);
             color: var(--primary-navy);
             min-height: 100vh;
@@ -699,6 +699,176 @@
             z-index: 99;
             text-decoration: none;
         }
+    
+        /* Smooth Scroll & Scroll Margin for Day Cards */
+        html {
+            scroll-behavior: smooth;
+        }
+        .day-schedule-card, .info-card, .converter-card {
+            scroll-margin-top: 64px;
+        }
+
+        /* Sticky Day Nav Container */
+        .sticky-nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(220, 236, 247, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 8px 16px 8px;
+            margin: 0 -16px 14px;
+            border-bottom: 1.5px solid rgba(61, 80, 100, 0.18);
+            box-shadow: 0 4px 10px rgba(42, 59, 76, 0.06);
+        }
+
+        .sticky-nav-container .day-nav-scroll {
+            margin-bottom: 0;
+            padding-bottom: 2px;
+        }
+
+        /* Live rate pulse dot */
+        .live-pulse {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #10B981;
+            border-radius: 50%;
+            margin-right: 4px;
+            animation: pulse-dot 1.8s infinite;
+        }
+        @keyframes pulse-dot {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.6; }
+        }
+
+        .rate-status {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #059669;
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+        }
+
+        /* Mobile-Friendly 5-Day Weather Card */
+        .weather-5day-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-main);
+            border: 2px solid var(--border-line);
+            box-shadow: 4px 6px 0px rgba(61, 80, 100, 0.15);
+            padding: 14px 14px 12px;
+            margin-bottom: 20px;
+        }
+
+        .w-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 0 2px;
+        }
+
+        .w-title {
+            font-size: 0.88rem;
+            font-weight: 900;
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .w-badge {
+            font-size: 0.7rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            background: var(--pastel-coral);
+            color: #FFFFFF;
+            padding: 2px 8px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border-line);
+        }
+
+        .w-scroll-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+        @media (max-width: 480px) {
+            .w-scroll-grid {
+                grid-template-columns: repeat(5, minmax(68px, 1fr));
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+            }
+            .w-scroll-grid::-webkit-scrollbar { display: none; }
+        }
+
+        .w-day-box {
+            background: #FAF7F2;
+            border: 1.2px solid var(--border-line);
+            border-radius: 14px;
+            padding: 8px 4px;
+            text-align: center;
+        }
+
+        .w-d-name {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 2px;
+        }
+
+        .w-icon {
+            font-size: 1.2rem;
+            line-height: 1.2;
+            margin: 2px 0;
+        }
+
+        .w-temp {
+            font-size: 0.7rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--pastel-coral);
+        }
+
+        .w-tag {
+            font-size: 0.62rem;
+            color: var(--text-sub);
+            font-weight: 700;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .w-outfit-memo {
+            background: #FFFDF0;
+            border: 1.2px dashed #E5C365;
+            border-radius: 12px;
+            padding: 6px 10px;
+            font-size: 0.74rem;
+            color: #8C6207;
+            margin-top: 8px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        /* FAB back to top smooth behavior */
+        .fab-btn {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            transform: translateY(10px);
+        }
+        .fab-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .fab-btn:active {
+            transform: scale(0.92);
+        }
+
     </style>
 </head>
 <body>
@@ -798,15 +968,63 @@
                 <span class="meta-pill">🚇 全程地下鐵・西鐵順遊</span>
             </div>
         </div>
+        <!-- Mobile-Friendly 5-Day Weather & Outfit Card -->
+        <div class="weather-5day-card">
+            <div class="w-header">
+                <div class="w-title">
+                    <span>⛅ 福岡 5 日氣候與穿搭手帳</span>
+                </div>
+                <span class="w-badge">9/22 - 9/26</span>
+            </div>
+            <div class="w-scroll-grid">
+                <div class="w-day-box">
+                    <div class="w-d-name">D1 (二)</div>
+                    <div class="w-icon">☀️</div>
+                    <div class="w-temp">26° / 19°</div>
+                    <span class="w-tag">晴朗市區</span>
+                </div>
+                <div class="w-day-box">
+                    <div class="w-d-name">D2 (三)</div>
+                    <div class="w-icon">⛅</div>
+                    <div class="w-temp">27° / 20°</div>
+                    <span class="w-tag">海風舒適</span>
+                </div>
+                <div class="w-day-box">
+                    <div class="w-d-name">D3 (四)</div>
+                    <div class="w-icon">🌦️</div>
+                    <div class="w-temp">23° / 16°</div>
+                    <span class="w-tag">山區微涼</span>
+                </div>
+                <div class="w-day-box">
+                    <div class="w-d-name">D4 (五)</div>
+                    <div class="w-icon">☀️</div>
+                    <div class="w-temp">27° / 20°</div>
+                    <span class="w-tag">晨跑晴朗</span>
+                </div>
+                <div class="w-day-box">
+                    <div class="w-d-name">D5 (六)</div>
+                    <div class="w-icon">⛅</div>
+                    <div class="w-temp">26° / 19°</div>
+                    <span class="w-tag">涼爽微風</span>
+                </div>
+            </div>
+            <div class="w-outfit-memo">
+                🍂 <strong>穿搭靈感：</strong>福岡初秋舒適，白天穿短袖即可；<strong>Day 3 由布院山區早晚溫差較大</strong>，請隨身備一件透氣薄長袖或罩衫防風！
+            </div>
+        </div>
+
 
         <!-- =================================================== -->
         <!-- LIVE CURRENCY CONVERTER (台幣 / 日幣 即時換算小工具) -->
         <!-- =================================================== -->
         <div class="converter-card" id="converter">
             <div class="converter-header">
-                <div class="converter-title">
-                    <span class="badge-icon">¥</span>
-                    <span>台幣・日幣 即時快速換算</span>
+                <div>
+                    <div class="converter-title">
+                        <span class="badge-icon">¥</span>
+                        <span>台幣・日幣 即時快速換算</span>
+                    </div>
+                    <div class="rate-status" id="rateStatus"><span class="live-pulse"></span>即時匯率連線中...</div>
                 </div>
                 <div class="rate-control">
                     <span>匯率:</span>
@@ -843,19 +1061,21 @@
                 <span class="amt-btn" onclick="quickSetJPY(5000)">5,000円 (退稅門檻)</span>
                 <span class="amt-btn" onclick="quickSetJPY(10000)">10,000円</span>
                 <span class="amt-btn" onclick="quickSetJPY(30000)">30,000円</span>
-                <span class="amt-btn" onclick="quickSetJPY(50000)">50,000円 (黑繃帶)</span>
+                <span class="amt-btn" onclick="quickSetJPY(50000)">50,000円 (專櫃精品)</span>
             </div>
         </div>
 
-        <!-- Quick Day Nav Scroll -->
-        <div class="day-nav-scroll">
-            <a href="#d1" class="day-nav-pill active">D1 抵達・天神選品・屋台</a>
-            <a href="#d2" class="day-nav-pill">D2 宮地嶽・櫛田・運河城</a>
-            <a href="#d3" class="day-nav-pill">D3 大分一日遊・車站晚餐</a>
-            <a href="#d4" class="day-nav-pill">D4 大濠晨跑・LaLaport/近郊</a>
-            <a href="#d5" class="day-nav-pill">D5 六本松麵包・16:00燒肉</a>
-            <a href="#tax-guide" class="day-nav-pill">🛍️ 退稅與百貨</a>
-            <a href="#super-guide" class="day-nav-pill">🛒 超市指南</a>
+        <!-- Sticky Intuitive Quick Day Nav -->
+        <div class="sticky-nav-container">
+            <div class="day-nav-scroll">
+                <a href="#d1" class="day-nav-pill active" data-target="d1">D1 抵達・天神</a>
+                <a href="#d2" class="day-nav-pill" data-target="d2">D2 宮地嶽・櫛田</a>
+                <a href="#d3" class="day-nav-pill" data-target="d3">D3 大分一日遊</a>
+                <a href="#d4" class="day-nav-pill" data-target="d4">D4 晨跑・LaLaport</a>
+                <a href="#d5" class="day-nav-pill" data-target="d5">D5 麵包・16:00燒肉</a>
+                <a href="#tax-guide" class="day-nav-pill" data-target="tax-guide">🛍️ 百貨退稅</a>
+                <a href="#super-guide" class="day-nav-pill" data-target="super-guide">🛒 超市指南</a>
+            </div>
         </div>
 
         <!-- ================= DAY 1 ================= -->
@@ -887,7 +1107,7 @@
                     <div class="item-main">
                         <h3>天神核心逛街線！單向順遊不走回頭路 <span class="tag-pill tag-purple">選品採買</span></h3>
                         <p class="item-desc">
-                            1. <strong>岩田屋本店（IWATAYA）</strong>：新館 1F 憑護照領 5% 券，掃貨專櫃美妝（HR 黑繃帶）；直上 <strong>新館 3 樓</strong> 探索頂級設計師與國際當代選品服飾，7F 退稅！<br>
+                            1. <strong>岩田屋本店（IWATAYA）</strong>：新館 1F 憑護照領 5% 券，採買專櫃美妝與保養；直上 <strong>新館 3 樓</strong> 探索頂級設計師與國際當代選品服飾，7F 退稅！<br>
                             2. <strong>CABaN 福岡店（大名 1 丁目）</strong>：自岩田屋步行 3 分即達！日系頂級羊絨針織與都會極簡剪裁必逛！<br>
                             3. <strong>ONE FUKUOKA BLDG.（天神全新摩天地標）</strong>：地下街直通，匯聚 126 間生活風格選物、蔦屋書店與咖啡。<br>
                             4. <strong>mina 天神 ＆ 連通 AEON SHOPPERS 福岡</strong>：地下街一路往北直達！擁有全九州最大 UNIQLO、GU、LOFT，1F/4F 連通隔壁 AEON 大超市與 MUJI 無印良品！
@@ -1188,7 +1408,7 @@
                 </div>
                 <div class="info-box">
                     <h4>岩田屋本店 (IWATAYA) <span>頂級美妝與新館 3F</span></h4>
-                    <p>全九州美妝霸主（HR 黑繃帶、肌膚之鑰等）與新館 3F 設計師選品！新館 1F 先領 <strong>5% 折扣券</strong>，採買後至新館 7F 退稅中心退稅。</p>
+                    <p>全九州專櫃美妝霸主（肌膚之鑰、專櫃香氛等）與新館 3F 設計師選品！新館 1F 先領 <strong>5% 折扣券</strong>，採買後至新館 7F 退稅中心退稅。</p>
                 </div>
                 <div class="info-box">
                     <h4>大名選品店：CABaN <span>日系頂級極簡針織</span></h4>
@@ -1233,7 +1453,42 @@
 
     <!-- Interactive Currency Converter Script -->
     <script>
-        let currentRate = 0.21;
+        let currentRate = 0.208; // 預設安全備用匯率
+
+        // 1. 真實匯率 API 自動抓取
+        async function fetchLiveRate() {
+            const statusEl = document.getElementById('rateStatus');
+            const rateInput = document.getElementById('customRate');
+            try {
+                // 免費高可用性 API
+                const res = await fetch('https://open.er-api.com/v6/latest/JPY');
+                if (!res.ok) throw new Error('API request failed');
+                const data = await res.json();
+                if (data && data.rates && data.rates.TWD) {
+                    currentRate = parseFloat(data.rates.TWD);
+                    rateInput.value = currentRate.toFixed(4);
+                    statusEl.innerHTML = `<span class="live-pulse"></span>已連線真實匯率：1 JPY ≈ ${currentRate.toFixed(4)} TWD`;
+                    convertJPYtoTWD();
+                    return;
+                }
+            } catch (err) {
+                console.warn('Primary rate API error, trying fallback...', err);
+            }
+
+            try {
+                const res2 = await fetch('https://api.exchangerate-api.com/v4/latest/JPY');
+                const data2 = await res2.json();
+                if (data2 && data2.rates && data2.rates.TWD) {
+                    currentRate = parseFloat(data2.rates.TWD);
+                    rateInput.value = currentRate.toFixed(4);
+                    statusEl.innerHTML = `<span class="live-pulse"></span>已連線即時匯率：1 JPY ≈ ${currentRate.toFixed(4)} TWD`;
+                    convertJPYtoTWD();
+                    return;
+                }
+            } catch (e) {
+                statusEl.innerHTML = `⚠️ 離線參考匯率：1 JPY ≈ 0.208 TWD`;
+            }
+        }
 
         function updateRate() {
             const r = parseFloat(document.getElementById('customRate').value);
@@ -1281,6 +1536,53 @@
                 jpyEl.focus();
             }
         }
+
+        // 2. 回到頁首 (Back to Top) 懸浮按鈕平滑滾動
+        const fabBtn = document.querySelector('.fab-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 350) {
+                fabBtn.classList.add('visible');
+            } else {
+                fabBtn.classList.remove('visible');
+            }
+        });
+
+        fabBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 3. 頂部吸頂天數導航 (Scrollspy Active Highlighting)
+        const navPills = document.querySelectorAll('.day-nav-pill');
+        const trackedSections = Array.from(navPills).map(pill => {
+            const targetId = pill.getAttribute('data-target');
+            return targetId ? document.getElementById(targetId) : null;
+        }).filter(Boolean);
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + 100;
+            let currentId = '';
+            trackedSections.forEach(sec => {
+                if (sec.offsetTop <= scrollPos) {
+                    currentId = sec.id;
+                }
+            });
+            if (currentId) {
+                navPills.forEach(pill => {
+                    if (pill.getAttribute('data-target') === currentId) {
+                        pill.classList.add('active');
+                        pill.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        pill.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // 頁面載入時抓取最新即時匯率
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchLiveRate();
+        });
     </script>
 </body>
 </html>
